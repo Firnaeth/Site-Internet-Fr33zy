@@ -88,7 +88,7 @@ CREATEURS = {
         "insta": "https://instagram.com/firnaeth_yt",
         "discord": "https://discord.gg/votrelien",
     },
-    "NICOLEGEEK": {
+    "NICO LE GEEK": {
         "role": "Founding Member / Geek",
         "img": "https://unavatar.io/youtube/NICOLEGEEK",
         "desc": "Un vrai mordu de culture geek, grand collectionneur de consoles et de jeux rétro. Toujours prêt pour une partie sur les classiques qui ont marqué l'histoire.",
@@ -100,7 +100,7 @@ CREATEURS = {
         "twitch_id": None,
         "discord": "https://discord.gg/votrelien",
     },
-    "XannaLaNooblette": {
+    "Xanna La Nooblette": {
         "role": "Founding Member / Streameuse",
         "img": "https://unavatar.io/youtube/xannalanooblette",
         "desc": "Entre humour, fails épiques et aventures virtuelles, je transforme mes galères en gameplay pour vous offrir le meilleur du gaming (et du gâteau) avec style ! 🍰🎮",
