@@ -88,7 +88,7 @@ CREATEURS = {
         "liens": "https://www.youtube.com/@firnaethYT",
         "twitch_id": "firnaeth",
         "insta": "https://instagram.com/firnaeth_yt",
-        "thread_url": "https://www.threads.net/@firnaeth_yt",
+        "thread_url": "https://www.threads.com/@firnaeth_yt",
         "discord": "https://discord.gg/votrelien",
     },
     "NICO LE GEEK": {
