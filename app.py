@@ -88,6 +88,7 @@ CREATEURS = {
         "liens": "https://www.youtube.com/@firnaethYT",
         "twitch_id": "firnaeth",
         "insta": "https://instagram.com/firnaeth_yt",
+        "thread_url": "https://www.threads.net/@firnaeth_yt",
         "discord": "https://discord.gg/votrelien",
     },
     "NICO LE GEEK": {
@@ -162,6 +163,8 @@ if st.session_state.current_profile:
             f'<a href="{m["discord"]}" class="network-link" target="_blank">DISCORD</a>')
         if m.get('insta'): liens_html.append(
             f'<a href="{m["insta"]}" class="network-link" target="_blank">INSTAGRAM</a>')
+        if m.get('thread_url'): liens_html.append(
+            f'<a href="{m["insta"]}" class="network-link" target="_blank">THREAD</a>')
         if liens_html:
             st.markdown(f'<div class="network-bar">' + " &nbsp; &bull; &nbsp; ".join(liens_html) + '</div>',
                         unsafe_allow_html=True)
