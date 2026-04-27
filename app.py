@@ -184,15 +184,28 @@ if st.session_state.current_profile:
             f"<p style='color:#8b949e; font-size:0.8rem; margin-bottom:0;'>JEUX DU MOMENT</p><p style='font-size:1.1rem; font-weight:bold;'>{', '.join(m['jeux'])}</p>",
             unsafe_allow_html=True)
 
-    # 5. PLANNING
-    st.write("")
-    st.divider()
-    st.subheader(f"📅 PLANNING DE {nom.upper()}")
-    if m.get('twitch_id'):
-        st.link_button(f"VOIR SUR TWITCH", f"https://www.twitch.tv/{m['twitch_id']}/schedule", use_container_width=True)
-        st.markdown(
-            f'<iframe src="https://www.twitch.tv/popout/{m["twitch_id"]}/schedule" height="600" width="100%" frameborder="0"></iframe>',
-            unsafe_allow_html=True)
+# --- DÉBUT DU BLOC À COLLER ---
+    if nom == "NICOLEGEEK":
+        st.subheader("📅 PLANNING & ACTUALITÉS")
+        st.write("NicoleGeek n'a pas de planning de stream fixe, mais il est très actif sur YouTube pour vous présenter ses dernières trouvailles rétro et ses consoles de collection !")
+        
+        # Le bouton identique aux autres
+        st.markdown(f'''
+            <a href="{m["liens"]}" target="_blank" style="text-decoration: none;">
+                <div class="custom-button-link">
+                    VOIR SES VIDÉOS SUR YOUTUBE
+                </div>
+            </a>
+        ''', unsafe_allow_html=True)
+    
+    elif m.get('twitch_id'):
+        st.subheader(f"📅 PLANNING DE {nom.upper()}")
+        st.link_button(f"VOIR LE PLANNING SUR TWITCH", f"https://www.twitch.tv/{m['twitch_id']}/schedule", use_container_width=True)
+        st.markdown(f'<iframe src="https://www.twitch.tv/popout/{m["twitch_id"]}/schedule" height="600" width="100%" frameborder="0"></iframe>', unsafe_allow_html=True)
+    
+    else:
+        st.subheader("📅 PLANNING")
+        st.write("Planning bientôt disponible pour ce membre.")
 
 elif st.session_state.active_tab == "L'ÉQUIPE":
     st.subheader("🎬 NOTRE ÉQUIPE")
