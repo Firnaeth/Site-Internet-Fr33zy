@@ -78,7 +78,7 @@ CREATEURS = {
         "role": "Founding Member / Streameur",
         "img": "https://unavatar.io/youtube/firnaethYT",
         "desc": "Animateur à l'imagination débridée et fondateur du studio, je vous embarque dans un courant chaotique entre pixels, créations animées et réflexions absurdes. 🦴🌊",
-        "jeux": ["Silent Hill 2", "The Elder Scrolls V: Skyrim"],
+        "jeux": ["Silent Hill 2", "The Elder Scrolls V: Skyrim", "Medieval Crafter: Blacksmith"],
         "series": [
             {"nom": "📜 Journal d’un forge-lol 🔨", "url": "https://youtube.com/playlist?list=PLgX-3H3ACJk5Rb3whj-89ANDgMXN-iaBf&si=imShezTIZrFKmWx_"},
             {"nom": "Lura : L’Héritière des Forges", "url": "https://www.youtube.com/playlist?list=PLgX-3H3ACJk40I098msu4YsPFX5fNPRDO"},
