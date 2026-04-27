@@ -3,7 +3,7 @@ import streamlit as st
 # --- CONFIGURATION DE LA PAGE ---
 st.set_page_config(
     page_title="Fr33zy Over Studio",
-    page_icon="🎮",
+    page_icon="logo.png",  # Doit être identique au nom du fichier sur GitHub
     layout="wide"
 )
 
