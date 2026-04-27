@@ -77,7 +77,7 @@ CREATEURS = {
     "Firnaeth": {
         "role": "Founding Member / Streameur",
         "img": "https://unavatar.io/youtube/firnaethYT",
-        "desc": "Passionné par l'univers du gaming et de la création vidéo depuis des années.",
+        "desc": "Animateur à l'imagination débridée et fondateur du studio, je vous embarque dans un courant chaotique entre pixels, créations animées et réflexions absurdes. 🦴🌊",
         "jeux": ["Silent Hill 2", "The Elder Scrolls V: Skyrim"],
         "series": [
             {"nom": "Lura : L’Héritière des Forges", "url": "https://www.youtube.com/playlist?list=PLgX-3H3ACJk40I098msu4YsPFX5fNPRDO"},
@@ -91,10 +91,10 @@ CREATEURS = {
     "NICOLEGEEK": {
         "role": "Founding Member / Geek",
         "img": "https://unavatar.io/youtube/NICOLEGEEK",
-        "desc": "Le pilier technique du studio. Passionné par le hardware et le retro gaming.",
+        "desc": "Un vrai mordu de culture geek, grand collectionneur de consoles et de jeux rétro. Toujours prêt pour une partie sur les classiques qui ont marqué l'histoire.",
         "jeux": ["Retro Gaming", "Tech Setup"],
         "series": [
-            {"nom": "TESTS HARDWARE", "url": "https://youtube.com/playlist?list=..."}
+            {"nom": "LE BUREAU DES PLAINTES", "url": "https://youtube.com/playlist?list=PLkBX3VXLbjxjTAXJeaohmW9G-F9Wne1c3&si=x-tq5dHrDOZiVO8z    "}
         ],
         "liens": "https://www.youtube.com/@NICOLEGEEK",
         "twitch_id": None,
@@ -103,7 +103,7 @@ CREATEURS = {
     "XannaLaNooblette": {
         "role": "Founding Member / Streameuse",
         "img": "https://unavatar.io/youtube/xannalanooblette",
-        "desc": "Du gaming, de la bonne humeur et beaucoup de découvertes épiques.",
+        "desc": "Entre humour, fails épiques et aventures virtuelles, je transforme mes galères en gameplay pour vous offrir le meilleur du gaming (et du gâteau) avec style ! 🍰🎮",
         "jeux": ["Slime Rancher 2", "The Elder Scrolls V: Skyrim"],
         "series": [
             {"nom": "Slime Rancher 2", "url": "https://www.youtube.com/playlist?list=PLD-GVWgeEc6diG7X1purupOBtHJqrZwnx"},
