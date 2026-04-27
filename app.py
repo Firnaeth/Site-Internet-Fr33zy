@@ -92,7 +92,7 @@ CREATEURS = {
         "role": "Founding Member / Geek",
         "img": "https://unavatar.io/youtube/NICOLEGEEK",
         "desc": "Un vrai mordu de culture geek, grand collectionneur de consoles et de jeux rétro. Toujours prêt pour une partie sur les classiques qui ont marqué l'histoire.",
-        "jeux": ["Retro Gaming", "Tech Setup"],
+        "jeux": ["Retro Gaming", ""],
         "series": [
             {"nom": "LE BUREAU DES PLAINTES", "url": "https://youtube.com/playlist?list=PLkBX3VXLbjxjTAXJeaohmW9G-F9Wne1c3&si=x-tq5dHrDOZiVO8z    "}
         ],
