@@ -80,6 +80,7 @@ CREATEURS = {
         "desc": "Animateur à l'imagination débridée et fondateur du studio, je vous embarque dans un courant chaotique entre pixels, créations animées et réflexions absurdes. 🦴🌊",
         "jeux": ["Silent Hill 2", "The Elder Scrolls V: Skyrim"],
         "series": [
+            {"nom": "📜 Journal d’un forge-lol 🔨", "url": "https://www.youtube.com/watch?v=tS6wL_5FS-0&t=4s"},
             {"nom": "Lura : L’Héritière des Forges", "url": "https://www.youtube.com/playlist?list=PLgX-3H3ACJk40I098msu4YsPFX5fNPRDO"},
             {"nom": "Chroniques De Silent Hill 2 ", "url": "https://www.youtube.com/playlist?list=PLgX-3H3ACJk7l33I2euw_yEPJ7a4JEVx9"}
         ],
