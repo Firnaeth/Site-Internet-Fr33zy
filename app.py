@@ -82,7 +82,8 @@ CREATEURS = {
         "series": [
             {"nom": "📜 Journal d’un forge-lol 🔨", "url": "https://youtube.com/playlist?list=PLgX-3H3ACJk5Rb3whj-89ANDgMXN-iaBf&si=imShezTIZrFKmWx_"},
             {"nom": "Lura : L’Héritière des Forges", "url": "https://www.youtube.com/playlist?list=PLgX-3H3ACJk40I098msu4YsPFX5fNPRDO"},
-            {"nom": "Chroniques De Silent Hill 2", "url": "https://www.youtube.com/playlist?list=PLgX-3H3ACJk7l33I2euw_yEPJ7a4JEVx9"}
+            {"nom": "Chroniques De Silent Hill 2", "url": "https://www.youtube.com/playlist?list=PLgX-3H3ACJk7l33I2euw_yEPJ7a4JEVx9"},
+            {"nom": "Underground Garage", "url": "https://www.youtube.com/playlist?list=PLgX-3H3ACJk6exfv_mzqJ-IKSZJbhFuNe"}
         ],
         "liens": "https://www.youtube.com/@firnaethYT",
         "twitch_id": "firnaeth",
