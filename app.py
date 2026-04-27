@@ -164,7 +164,7 @@ if st.session_state.current_profile:
         if m.get('insta'): liens_html.append(
             f'<a href="{m["insta"]}" class="network-link" target="_blank">INSTAGRAM</a>')
         if m.get('thread_url'): liens_html.append(
-            f'<a href="{m["insta"]}" class="network-link" target="_blank">THREADS</a>')
+            f'<a href="{m["thread_url"]}" class="network-link" target="_blank">THREADS</a>')
         if liens_html:
             st.markdown(f'<div class="network-bar">' + " &nbsp; &bull; &nbsp; ".join(liens_html) + '</div>',
                         unsafe_allow_html=True)
