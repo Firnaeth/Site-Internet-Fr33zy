@@ -3,6 +3,7 @@ import streamlit as st
 # --- DEFINITION DES INFOS TECHNIQUES (À METTRE EN HAUT) ---
 VERSION = "0.0.1"
 LICENSE = "© 2026 FR33ZY OVER STUDIO - TOUS DROITS RÉSERVÉS"
+TOOLS = "POWERED BY OBS STUDIO • DAVINCI RESOLVE • STREAMLIT • PHOTOSHOP"
 
 # --- CONFIGURATION DE LA PAGE ---
 st.set_page_config(
@@ -339,7 +340,7 @@ st.markdown(f"""
             <span style="color: #8b949e; font-size: 0.7rem; font-weight: normal; margin-left: 10px;">v{VERSION}</span>
         </p>
         <p style="font-size: 0.65rem; letter-spacing: 2px; color: #8b949e; text-transform: uppercase; opacity: 0.6;">
-            POWERED BY OBS STUDIO • DAVINCI RESOLVE • STREAMLIT • PHOTOSHOP
+            {TOOLS}
         </p>
     </div>
 """, unsafe_allow_html=True)
