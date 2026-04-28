@@ -120,10 +120,10 @@ CREATEURS = {
     }
 }
 
-# --- NAVIGATION ---
+# --- NAVIGATION (MISE À JOUR : 6 COLONNES) ---
 st.write("---")
-cols_nav = st.columns(4)
-btns = ["QUI SOMMES-NOUS", "L'ÉQUIPE", "CONTACT", "DON"]
+cols_nav = st.columns(6) # Changé de 4 à 6
+btns = ["QUI SOMMES-NOUS", "L'ÉQUIPE", "PROJETS", "SHOP", "CONTACT", "DON"]
 for i, btn in enumerate(btns):
     with cols_nav[i]:
         if st.button(btn, key=f"nav_{btn}", use_container_width=True):
@@ -291,6 +291,42 @@ elif st.session_state.active_tab == "DON":
             <p style="font-size: 0.9rem;">Nous préparons une plateforme sécurisée pour vos dons.</p>
         </div>
     """, unsafe_allow_html=True)
+    
+# Ajoute ces blocs avant le FOOTER :
+
+if st.session_state.active_tab == "PROJETS":
+    st.subheader("📁 NOS RÉALISATIONS")
+    st.write("")
+
+    # Message d'attente stylisé
+    st.info(
+        "🎬 Nos projets cinématographiques et créatifs sont actuellement en cours de montage. La page Projets sera mise à jour très prochainement !")
+
+    # Bloc visuel "Work in Progress"
+    st.markdown("""
+            <div style="text-align: center; padding: 40px; border: 1px dashed #30363d; border-radius: 10px; opacity: 0.6; margin-top:20px;">
+                <p style="font-size: 1.2rem; color: #e67e22;">🚧 PROJETS EN COURS DE DÉVELOPPEMENT 🚧</p>
+                <p style="font-size: 0.9rem;">De la création vidéo aux archives du studio, préparez-vous pour du lourd.</p>
+            </div>
+        """, unsafe_allow_html=True)
+
+
+elif st.session_state.active_tab == "SHOP":
+    st.subheader("🛒 BOUTIQUE OFFICIELLE")
+    st.write("Soutenez l'association en arborant nos couleurs !")
+    st.write("")
+
+    # Message d'attente identique à la page DON
+    st.info(
+        "🚀 La boutique officielle Fr33zy Over Studio est actuellement en cours de préparation. Vous y retrouverez bientôt nos vêtements et accessoires exclusifs !")
+
+    # Bloc de maintenance visuel (comme sur ta page DON)
+    st.markdown("""
+            <div style="text-align: center; padding: 40px; border: 1px dashed #30363d; border-radius: 10px; opacity: 0.6; margin-top:20px;">
+                <p style="font-size: 1.2rem; color: #e67e22;">🚧 MODULE BOUTIQUE EN CONSTRUCTION 🚧</p>
+                <p style="font-size: 0.9rem;">Nous sélectionnons les meilleurs produits pour vous garantir une qualité premium.</p>
+            </div>
+        """, unsafe_allow_html=True)
 
 # --- FOOTER ---
 st.markdown("""
