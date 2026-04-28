@@ -1,20 +1,23 @@
-CONTRAT DE LICENCE PROPRIÉTAIRE - FR33ZY OVER STUDIO
+LICENCE PROPRIÉTAIRE - FR33ZY OVER STUDIO
 
 Copyright (c) 2026 FR33ZY OVER STUDIO. Tous droits réservés.
 
-Le code source, les graphismes, le logo et les contenus de ce dépôt sont la 
-propriété exclusive de FR33ZY OVER STUDIO.
+1. PROPRIÉTÉ DU STUDIO
+Le code source de ce site, le design (CSS), la structure des données ainsi que 
+tous les contenus originaux (textes, logos, visuels créatifs) sont la propriété 
+exclusive de l'association FR33ZY OVER STUDIO. Toute reproduction ou 
+exploitation sans accord écrit est strictement interdite.
 
-1. RESTRICTIONS :
-Il est strictement interdit à toute personne tierce de :
-- Copier, modifier ou distribuer le code source de ce projet.
-- Utiliser le nom ou le logo "FR33ZY OVER STUDIO" à des fins commerciales 
-  ou privées sans autorisation écrite.
-- Héberger une copie de ce site (fork) sur un autre serveur.
+2. LOGICIELS TIERS & CRÉDITS
+Le studio reconnaît l'utilisation de logiciels et technologies tiers pour sa 
+production. La présente licence ne revendique aucun droit de propriété sur :
+- Les logiciels de montage et de production (ex: DaVinci Resolve, OBS Studio, Photoshop).
+- Le framework de développement (Streamlit).
+- Les bibliothèques de code tierces (Python).
 
-2. EXPLOITATION :
-Seuls les membres officiels du studio et les contributeurs autorisés par 
-FR33ZY OVER STUDIO ont le droit d'exploiter et de modifier ce code pour les 
-besoins de l'association.
+Ces outils restent la propriété exclusive de leurs éditeurs respectifs et sont 
+utilisés conformément à leurs propres licences d'utilisation.
 
-Toute utilisation non autorisée pourra faire l'objet de poursuites.
+3. UTILISATION DU CODE
+L'utilisation de ce code source est réservée aux membres de FR33ZY OVER STUDIO 
+pour les besoins officiels du studio.
