@@ -1,5 +1,9 @@
 import streamlit as st
 
+# --- DEFINITION DES INFOS TECHNIQUES (À METTRE EN HAUT) ---
+VERSION = "1.0.2"
+LICENSE = "© 2026 FR33ZY OVER STUDIO - TOUS DROITS RÉSERVÉS"
+
 # --- CONFIGURATION DE LA PAGE ---
 st.set_page_config(
     page_title="Fr33zy Over Studio",
