@@ -335,7 +335,7 @@ elif st.session_state.active_tab == "SHOP":
 st.markdown(f"""
     <div style="text-align: center; margin-top: 50px; padding-top: 30px; border-top: 1px solid #30363d;">
         <p style="font-size: 0.9rem; color: white; margin-bottom: 5px; font-weight: 500;">
-            © 2026 <span style="color: #e67e22; font-weight: bold;">FR33ZY OVER STUDIO</span>. 
+            © 2026 <span style="color: #e67e22; font-weight: bold;">FR33ZY OVER STUDIO</span> - TOUS DROITS RÉSERVÉS.
             <span style="color: #8b949e; font-size: 0.7rem; font-weight: normal; margin-left: 10px;">v{VERSION}</span>
         </p>
         <p style="font-size: 0.65rem; letter-spacing: 2px; color: #8b949e; text-transform: uppercase; opacity: 0.6;">
