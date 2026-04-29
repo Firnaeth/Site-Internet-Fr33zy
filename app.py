@@ -403,12 +403,28 @@ elif st.session_state.active_tab == "PROJETS":
                         <b style="color: #e67e22;">Projet Opera GX</b><br>
                         Création de la page YouTube du Studio
                     </div>
-                </div>
 
+<!-- 2012 -->
+            <div style="margin-bottom: 50px; position: relative;">
+                <div style="position: absolute; left: -53px; top: 8px; width: 22px; height: 22px; background: #0d1117; border: 3px solid #e67e22; border-radius: 50%; outline: 10px solid #0d1117; z-index: 2;"></div>
+                <h3 style="color: #e67e22; margin: 0;">2012 - LES ORIGINES (OVER_1)</h3>
+                <div style="background: #161b22; border: 1px solid #30363d; border-radius: 12px; padding: 20px; margin-top: 10px; color: white;">
+                    <p style="margin-top:0; color:#e67e22; font-weight:bold;">Émissions Cultes :</p>
+                    <ul style="list-style-type: none; padding-left: 0; font-size: 0.95rem; line-height: 1.6;">
+                        <li>📺 <b>Le JT</b> : L'actualité vue par Over.</li>
+                        <li>👍👎 <b>J'aime / J'aime pas</b> : L'émission d'opinion.</li>
+                        <li>🧠 <b>Qui veut passer pour un inculte ?</b> : Le jeu mythique.</li>
+                        <li>🛡️ <b>Bureau des Plaintes</b> : Le rendez-vous incontournable.</li>
+                        <li>🎮 <b>L'Overzone</b> : Tests et reviews de jeux vidéo.</li>
+                        <li>🎬 <b>Mais aussi</b> : Parodies, Bande-annonces et Best-of du JT.</li>
+                    </ul>
+                </div>
             </div>
+
         </div>
-        """
-    components.html(vert_html, height=600)
+    </div>
+    """
+    components.html(html_vert, height=850)
 
 elif st.session_state.active_tab == "CONTACT":
     st.subheader("📩 NOUS CONTACTER")
