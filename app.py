@@ -329,82 +329,33 @@ elif st.session_state.active_tab == "QUI SOMMES-NOUS":
             '<a href="https://www.youtube.com/@Fr33zyOverStudio" class="custom-button-link">S\'ABONNER SUR YOUTUBE</a>',
             unsafe_allow_html=True)
 
+# --- PAGE : PROJETS (Timeline Verticale avec Historique Over_1) ---
 elif st.session_state.active_tab == "PROJETS":
-    st.subheader("📁 NOS RÉALISATIONS")
-    st.info("🎬 Nos projets sont actuellement en cours de montage. Cette page sera mise à jour prochainement !")
-
-    # --- TIMELINE VERTICALE CENTRÉE ---
-    vert_html = """
-        <div style="background-color: #0d1117; display: flex; justify-content: center; padding: 20px; font-family: sans-serif;">
-            <div style="
-                position: relative; 
-                width: 100%; 
-                max-width: 600px; 
-                border-left: 4px solid #e67e22; 
-                margin: 40px auto; 
-                padding-left: 40px; 
-                min-height: 400px;
-            ">
-
-                <div style="margin-bottom: 60px; position: relative;">
-                    <div style="
-                        position: absolute; 
-                        left: -53px; 
-                        top: 8px; 
-                        width: 22px; 
-                        height: 22px; 
-                        background: #0d1117; 
-                        border: 3px solid #e67e22; 
-                        border-radius: 50%; 
-                        outline: 10px solid #0d1117; 
-                        z-index: 2;
-                        box-sizing: border-box;
-                    "></div>
-
-                    <h3 style="color: #e67e22; margin: 0; font-size: 1.5rem;">2026</h3>
-                    <div style="
-                        background: #161b22; 
-                        padding: 20px; 
-                        border-radius: 12px; 
-                        border: 1px solid #30363d; 
-                        margin-top: 10px; 
-                        color: white;
-                        box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-                    ">
-                        <b style="color: #e67e22;">Lancement Officiel</b><br>
-                        Déploiement de la plateforme FR33ZY OVER STUDIO.
-                    </div>
+    st.subheader("📁 PARCOURS & RÉALISATIONS")
+    
+    html_vert = """
+    <div style="background-color: #0d1117; display: flex; justify-content: center; padding: 20px; font-family: sans-serif;">
+        <div style="position: relative; width: 100%; max-width: 800px; border-left: 4px solid #e67e22; margin: 20px auto; padding-left: 40px;">
+            
+            <!-- 2026 -->
+            <div style="margin-bottom: 50px; position: relative;">
+                <div style="position: absolute; left: -53px; top: 8px; width: 22px; height: 22px; background: #e67e22; border: 3px solid #e67e22; border-radius: 50%; outline: 10px solid #0d1117; z-index: 2;"></div>
+                <h3 style="color: #e67e22; margin: 0;">2026 - L'ÈRE MODERNE</h3>
+                <div style="background: #161b22; border: 1px solid #30363d; border-radius: 12px; padding: 20px; margin-top: 10px; color: white;">
+                    <b>Lancement du Site Officiel</b> : Centralisation de l'univers FOS, boutique et projets communautaires.
                 </div>
+            </div>
 
-                <div style="margin-bottom: 60px; position: relative;">
-                    <div style="
-                        position: absolute; 
-                        left: -53px; 
-                        top: 8px; 
-                        width: 22px; 
-                        height: 22px; 
-                        background: #0d1117; 
-                        border: 3px solid #e67e22; 
-                        border-radius: 50%; 
-                        outline: 10px solid #0d1117; 
-                        z-index: 2;
-                        box-sizing: border-box;
-                    "></div>
+            <!-- 2016 -->
+            <div style="margin-bottom: 50px; position: relative;">
+                <div style="position: absolute; left: -53px; top: 8px; width: 22px; height: 22px; background: #0d1117; border: 3px solid #e67e22; border-radius: 50%; outline: 10px solid #0d1117; z-index: 2;"></div>
+                <h3 style="color: #e67e22; margin: 0;">2016 - LE DUO</h3>
+                <div style="background: #161b22; border: 1px solid #30363d; border-radius: 12px; padding: 20px; margin-top: 10px; color: white;">
+                    <b>Arrivée de Xanna La Nooblette</b> : Le studio prend une nouvelle dimension avec des contenus plus variés et une interaction accrue avec la communauté.
+                </div>
+            </div>
 
-                    <h3 style="color: #e67e22; margin: 0; font-size: 1.5rem;">2024</h3>
-                    <div style="
-                        background: #161b22; 
-                        padding: 20px; 
-                        border-radius: 12px; 
-                        border: 1px solid #30363d; 
-                        margin-top: 10px; 
-                        color: white;
-                    ">
-                        <b style="color: #e67e22;">Projet Opera GX</b><br>
-                        Création de la page YouTube du Studio
-                    </div>
-
-<!-- 2012 -->
+            <!-- 2012 -->
             <div style="margin-bottom: 50px; position: relative;">
                 <div style="position: absolute; left: -53px; top: 8px; width: 22px; height: 22px; background: #0d1117; border: 3px solid #e67e22; border-radius: 50%; outline: 10px solid #0d1117; z-index: 2;"></div>
                 <h3 style="color: #e67e22; margin: 0;">2012 - LES ORIGINES (OVER_1)</h3>
