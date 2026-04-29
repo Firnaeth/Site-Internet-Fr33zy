@@ -202,13 +202,12 @@ if st.session_state.current_profile:
             f"<p style='color:#8b949e; font-size:0.8rem; margin-bottom:0;'>JEUX DU MOMENT</p><p style='font-size:1.1rem; font-weight:bold;'>{', '.join(m['jeux'])}</p>",
             unsafe_allow_html=True)
 
-    # --- DÉBUT DU BLOC À COLLER ---
+    # --- NICOG33K ---
     if nom == "NICOLEGEEK":
         st.subheader("📅 PLANNING & ACTUALITÉS")
         st.write(
             "NicoleGeek n'a pas de planning de stream fixe, mais il est très actif sur YouTube pour vous présenter ses dernières trouvailles rétro et ses consoles de collection !")
 
-        # Le bouton identique aux autres
         st.markdown(f'''
             <a href="{m["liens"]}" target="_blank" style="text-decoration: none;">
                 <div class="custom-button-link">
@@ -267,7 +266,7 @@ elif st.session_state.active_tab == "QUI SOMMES-NOUS":
         </div>
     """, unsafe_allow_html=True)
 
-    # --- TIMELINE HORIZONTALE (ALIGNEMENT FINAL AU PIXEL PRÈS) ---
+    # --- TIMELINE HORIZONTALE ---
     timeline_html = """
         <div style="background-color: #0d1117; padding: 21px 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
             <div style="position: relative; width: 90%; margin: auto; height: 100px;">
