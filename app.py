@@ -418,7 +418,7 @@ elif st.session_state.active_tab == "CONTACT":
         st.markdown('<a href="mailto:contact@fr33zyoverstudio.fr" class="custom-button-link">CONTACT PAR EMAIL</a>',
                     unsafe_allow_html=True)
     with c2:
-        st.link_button("REJOINDRE LE DISCORD", "https://discord.gg/votrelien", use_container_width=True)
+        st.link_button("REJOINDRE LE DISCORD", "https://discord.gg/h4r2MSgJSk", use_container_width=True)
 
 elif st.session_state.active_tab == "SHOP" or st.session_state.active_tab == "DON":
     st.subheader(f"💎 {st.session_state.active_tab}")
