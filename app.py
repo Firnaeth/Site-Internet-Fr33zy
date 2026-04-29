@@ -423,7 +423,7 @@ elif st.session_state.active_tab == "SHOP" or st.session_state.active_tab == "DO
     st.subheader(f"💎 {st.session_state.active_tab}")
     st.info("🚀 Ce module est en cours de construction. Revenez très bientôt !")
 
-    # Bloc de maintenance visuel (comme sur ta page DON)
+    # Bloc de maintenance visuel (comme DON)
     st.markdown("""
             <div style="text-align: center; padding: 40px; border: 1px dashed #30363d; border-radius: 10px; opacity: 0.6; margin-top:20px;">
                 <p style="font-size: 1.2rem; color: #e67e22;">🚧 MODULE BOUTIQUE EN CONSTRUCTION 🚧</p>
