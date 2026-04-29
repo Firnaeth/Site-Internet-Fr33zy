@@ -593,15 +593,6 @@ elif st.session_state.active_tab == "PROJETS":
 elif st.session_state.active_tab == "PHOTOS":
     st.subheader("📸 GALERIE F.O.S")
     st.write("Retrouvez ici les moments forts du studio et nos visuels officiels.")
-    st.info("🚀 Ce module est en cours de construction. Revenez très bientôt !")
-
-    # Bloc de maintenance visuel (comme DON)
-    st.markdown("""
-            <div style="text-align: center; padding: 40px; border: 1px dashed #30363d; border-radius: 10px; opacity: 0.6; margin-top:20px;">
-                <p style="font-size: 1.2rem; color: #e67e22;">🚧 MODULE BOUTIQUE EN CONSTRUCTION 🚧</p>
-                <p style="font-size: 0.9rem;">Nous sélectionnons les meilleurs produits pour vous garantir une qualité premium.</p>
-            </div>
-        """, unsafe_allow_html=True)
 
     # On crée des colonnes pour organiser les photos
     col1, col2, col3 = st.columns(3)
