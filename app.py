@@ -249,12 +249,14 @@ elif st.session_state.active_tab == "CONTACT":
     c1, c2 = st.columns(2)
     with c1:
         st.markdown("### 📧 EMAIL")
-        st.markdown('<a href="mailto:contact.fr33zy0verstudio@gmail.com" class="custom-button-link">CONTACTER PAR EMAIL</a>',
-                    unsafe_allow_html=True)
+        st.markdown(
+            '<a href="mailto:contact.fr33zy0verstudio@gmail.com" class="custom-button-link">CONTACTER PAR EMAIL</a>',
+            unsafe_allow_html=True)
     with c2:
         st.markdown("### 💬 COMMUNAUTÉ")
         st.link_button("REJOINDRE LE DISCORD", "https://discord.gg/h4r2MSgJSk", use_container_width=True)
 
+# --- DANS LA SECTION : QUI SOMMES-NOUS ---
 elif st.session_state.active_tab == "QUI SOMMES-NOUS":
     st.subheader("NOTRE HISTOIRE")
     st.markdown("""
@@ -266,49 +268,166 @@ elif st.session_state.active_tab == "QUI SOMMES-NOUS":
         </div>
     """, unsafe_allow_html=True)
 
-    # --- TIMELINE HORIZONTALE ---
-    timeline_html = """
-        <div style="background-color: #0d1117; padding: 21px 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
-            <div style="position: relative; width: 90%; margin: auto; height: 100px;">
+    # --- PAGE : QUI SOMMES-NOUS (Style Image + Pop-up interactive) ---
+    if st.session_state.active_tab == "QUI SOMMES-NOUS":
+        st.subheader("📜 NOTRE PARCOURS !")
 
-                <div style="position: absolute; top: 8px; left: 0; right: 0; height: 4px; background: #e67e22; z-index: 1;"></div>
-                <div style="position: relative; z-index: 2; display: flex; justify-content: space-between; align-items: flex-start;">
+        html_timeline = """
+            <style>
+                .timeline-container { 
+                    background-color: #0d1117; 
+                    padding: 80px 15px; /* Plus d'espace en haut pour la pop-up */
+                    font-family: sans-serif; 
+                }
+                .timeline-wrapper { 
+                    position: relative; 
+                    width: 100%; 
+                    max-width: 1500px; 
+                    margin: 0 auto; 
+                    display: flex; 
+                    justify-content: space-between; 
+                }
 
-                    <div style="z-index: 2; display: flex; flex-direction: column; align-items: center; width: 22%;">
-                        <div style="width: 16px; height: 16px; background: #0d1117; border: 3px solid #e67e22; border-radius: 50%; outline: 8px solid #0d1117;"></div>
-                        <div style="background: #161b22; border: 1px solid #30363d; border-radius: 12px; padding: 15px; margin-top: 20px; text-align: center; width: 100%; min-height: 40px; display: flex; flex-direction: column; justify-content: center;">
-                        <b style="color: #e67e22; font-size: 1.1rem; margin-bottom: 5px;">2012</b>
-                        <span style="color: white; font-size: 0.85rem; opacity: 0.9;">Création d'Over_1</span>
-                    </div>
-                </div>
+                .line { 
+                    position: absolute; 
+                    top: 12px; 
+                    left: 0; 
+                    right: 0; 
+                    height: 4px; 
+                    background: #e67e22; 
+                    z-index: 1; 
+                }
 
-                    <div style="z-index: 2; display: flex; flex-direction: column; align-items: center; width: 22%;">
-                        <div style="width: 16px; height: 16px; background: #0d1117; border: 3px solid #e67e22; border-radius: 50%; outline: 8px solid #0d1117;"></div>
-                        <div style="background: #161b22; border: 1px solid #30363d; border-radius: 12px; padding: 15px; margin-top: 20px; text-align: center; width: 100%; min-height: 40px; display: flex; flex-direction: column; justify-content: center;">
-                        <b style="color: #e67e22; font-size: 1.1rem; margin-bottom: 5px;">2016</b>
-                        <span style="color: white; font-size: 0.85rem; opacity: 0.9;">+1, Xanna La Nooblette</span>
-                    </div>
-                </div>
+                .step { 
+                    z-index: 5; 
+                    position: relative; 
+                    display: flex; 
+                    flex-direction: column; 
+                    align-items: center; 
+                    flex: 1; 
+                }
 
-                    <div style="z-index: 2; display: flex; flex-direction: column; align-items: center; width: 22%;">
-                        <div style="width: 16px; height: 16px; background: #0d1117; border: 3px solid #e67e22; border-radius: 50%; outline: 8px solid #0d1117;"></div>
-                        <div style="background: #161b22; border: 1px solid #30363d; border-radius: 12px; padding: 15px; margin-top: 20px; text-align: center; width: 100%; min-height: 40px; display: flex; flex-direction: column; justify-content: center;">
-                        <b style="color: #e67e22; font-size: 1.1rem; margin-bottom: 5px;">2024</b>
-                        <span style="color: white; font-size: 0.85rem; opacity: 0.9;">Over_1 => Fr33zyOver Studio</span>
+                .dot { 
+                    width: 22px; 
+                    height: 22px; 
+                    background: #0d1117; 
+                    border: 4px solid #e67e22; 
+                    border-radius: 50%; 
+                    outline: 8px solid #0d1117; 
+                    transition: all 0.3s ease;
+                    cursor: pointer;
+                }
+
+                /* Effet au survol du point ou de la carte */
+                .step:hover .dot { 
+                    background: #e67e22; 
+                    transform: scale(1.3); 
+                }
+
+                .card {
+                    margin-top: 40px; 
+                    width: 85%; 
+                    background: #161b22; 
+                    border: 1px solid #30363d; 
+                    border-radius: 8px; 
+                    padding: 15px; 
+                    text-align: center; 
+                    transition: 0.3s;
+                    cursor: pointer;
+                }
+                .step:hover .card { border-color: #e67e22; }
+                .card b { color: #e67e22; display: block; font-size: 1.1rem; }
+                .card span { color: #8b949e; font-size: 0.85rem; }
+
+                /* LA POP-UP (Correction de la visibilité) */
+                .popup {
+                    position: absolute;
+                    bottom: 60px; /* Positionnée au-dessus du point */
+                    left: 50%;
+                    transform: translateX(-50%) translateY(10px);
+                    width: 260px;
+                    background-color: #1c2128;
+                    color: #fff;
+                    border: 1px solid #e67e22;
+                    border-radius: 8px;
+                    padding: 15px;
+                    font-size: 0.85rem;
+                    box-shadow: 0 10px 30px rgba(0,0,0,0.8);
+                    z-index: 9999; /* Force l'affichage au premier plan */
+                    opacity: 0;
+                    visibility: hidden;
+                    transition: all 0.3s ease;
+                    pointer-events: none; /* Évite de bloquer la souris */
+                }
+
+                /* Affichage lors du survol de TOUTE l'étape */
+                .step:hover .popup {
+                    opacity: 1;
+                    visibility: visible;
+                    transform: translateX(-50%) translateY(0px);
+                }
+
+                /* Triangle */
+                .popup::after {
+                    content: "";
+                    position: absolute;
+                    top: 100%;
+                    left: 50%;
+                    margin-left: -5px;
+                    border-width: 5px;
+                    border-style: solid;
+                    border-color: #e67e22 transparent transparent transparent;
+                }
+            </style>
+
+            <div class="timeline-container">
+                <div class="timeline-wrapper">
+                    <div class="line"></div>
+
+                    <div class="step">
+                        <div class="popup">
+                            <b style="color:#e67e22">PROGRAMMES 2012</b><br><br>
+                            • 📺 Le JT & Best-off<br>
+                            • 📺 L'OverZone 90's<br>
+                            • 👍 J'aime / J'aime pas<br>
+                            • 🧠 Qui veut passer pour un inculte ?<br>
+                            • 🛡️ Bureau des Plaintes
+                        </div>
+                        <div class="dot"></div>
+                        <div class="card"><b>2012</b><span>Création d'Over_1</span></div>
                     </div>
-                </div>
-                    
-                    <div style="z-index: 2; display: flex; flex-direction: column; align-items: center; width: 22%;">
-                        <div style="width: 16px; height: 16px; background: #e67e22; border: 3px solid #e67e22; border-radius: 50%; outline: 8px solid #0d1117; box-shadow: 0 0 15px rgba(230, 126, 34, 0.5);"></div>
-                        <div style="background: #1c2128; border: 1px solid #e67e22; border-radius: 12px; padding: 15px; margin-top: 20px; text-align: center; width: 100%; min-height: 40px; display: flex; flex-direction: column; justify-content: center;">
-                        <b style="color: #e67e22; font-size: 1.1rem; margin-bottom: 5px;">2026</b>
-                        <span style="color: white; font-size: 0.85rem; opacity: 0.9;">Site Officiel</span>
+
+                    <div class="step">
+                        <div class="popup">
+                            <b style="color:#e67e22">L'ALLIANCE</b><br><br>
+                            Arrivée de Xanna. Début du trio emblématique et expansion des formats.
+                        </div>
+                        <div class="dot"></div>
+                        <div class="card"><b>2016</b><span>+1, Xanna La Nooblette</span></div>
                     </div>
+
+                    <div class="step">
+                        <div class="popup">
+                            <b style="color:#e67e22">NOUVELLE ÈRE</b><br><br>
+                            Transition vers Fr33zy Over Studio (F.O.S).
+                        </div>
+                        <div class="dot"></div>
+                        <div class="card"><b>2024</b><span>Over_1 => F.O.S</span></div>
+                    </div>
+
+                    <div class="step">
+                        <div class="popup">
+                            <b style="color:#e67e22">OBJECTIF 2026</b><br><br>
+                            Lancement du Site et du Hub Communautaire.
+                        </div>
+                        <div class="dot" style="background: #e67e22;"></div>
+                        <div class="card" style="border-color: #e67e22;"><b>2026</b><span>Site Officiel</span></div>
+                    </div>
+
                 </div>
             </div>
-        </div>
-        """
-    components.html(timeline_html, height=180)
+            """
+        components.html(html_timeline, height=320)
 
     col_content, col_goal = st.columns(2)
     with col_content:
@@ -329,63 +448,147 @@ elif st.session_state.active_tab == "QUI SOMMES-NOUS":
             '<a href="https://www.youtube.com/@Fr33zyOverStudio" class="custom-button-link">S\'ABONNER SUR YOUTUBE</a>',
             unsafe_allow_html=True)
 
-# --- PAGE : PROJETS (Timeline Verticale Alignement Parfait) ---
 elif st.session_state.active_tab == "PROJETS":
-    st.subheader("📁 PARCOURS & RÉALISATIONS")
-    
-    html_vert = """
-    <div style="background-color: #0d1117; display: flex; justify-content: center; padding: 20px 10px; font-family: sans-serif;">
-        <!-- CONTENEUR PRINCIPAL -->
-        <!-- La barre fait 4px. On utilise margin-left pour laisser de la place aux cercles -->
-        <div style="position: relative; width: 100%; max-width: 750px; border-left: 4px solid #e67e22; margin-left: 60px; padding-left: 40px; padding-bottom: 20px; box-sizing: border-box;">
-            
-            <!-- FONCTIONNEMENT DU CALCUL : 
-                 La barre est à '0' du bord gauche du conteneur.
-                 Le cercle fait 22px de large. 
-                 Le centre du cercle est à 11px.
-                 Le centre de la barre est à 2px (puisqu'elle fait 4px).
-                 On décale donc de -53px (40px de padding + 11px de demi-cercle + 2px d'ajustement).
-            -->
+    st.subheader("🚀 NOS PROJETS & VISION")
+    st.info("🚀 Ce module est en cours de construction. Revenez très bientôt !")
 
-            <!-- SECTION 2026 -->
-            <div style="margin-bottom: 60px; position: relative;">
-                <div style="position: absolute; left: -53px; top: 6px; width: 22px; height: 22px; background: #e67e22; border: 3px solid #e67e22; border-radius: 50%; outline: 10px solid #0d1117; z-index: 2; box-sizing: border-box;"></div>
-                <h3 style="color: #e67e22; margin: 0; font-size: 1.5rem; line-height: 1.2;">2026</h3>
-                <div style="background: #161b22; border: 1px solid #30363d; border-radius: 12px; padding: 20px; margin-top: 15px; color: white;">
-                    <b>Lancement du Site Officiel</b> : Centralisation de l'univers FOS et nouveaux projets.
+    st.markdown(
+        '<div style="text-align: center;"><h4>"Construire l\'avenir de la communauté, un pixel à la fois."</h4></div>',
+        unsafe_allow_html=True)
+
+    html_vertical_inverted_dates = """
+        <style>
+            .main-container {
+                display: flex;
+                justify-content: center;
+                background-color: #0d1117;
+                padding: 40px 0;
+                font-family: sans-serif;
+                position: relative;
+            }
+
+            .v-line {
+                position: absolute;
+                left: 50%;
+                transform: translateX(-50%);
+                top: 0;
+                bottom: 0;
+                width: 4px;
+                background: #e67e22;
+                z-index: 1;
+            }
+
+            .v-wrapper {
+                width: 100%;
+                max-width: 900px;
+                display: flex;
+                flex-direction: column;
+                gap: 50px;
+            }
+
+            .v-step {
+                display: flex;
+                align-items: center;
+                width: 100%;
+                position: relative;
+                z-index: 2;
+            }
+
+            .v-dot {
+                position: absolute;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 20px;
+                height: 20px;
+                background: #0d1117;
+                border: 4px solid #e67e22;
+                border-radius: 50%;
+                outline: 8px solid #0d1117;
+                transition: 0.3s;
+            }
+            .v-step:hover .v-dot {
+                background: #e67e22;
+                transform: translateX(-50%) scale(1.3);
+            }
+
+            .v-card {
+                width: 40%;
+                margin-right: auto;
+                background: #161b22;
+                border: 1px solid #30363d;
+                border-radius: 8px;
+                padding: 15px;
+                text-align: right;
+                transition: 0.3s;
+                cursor: pointer;
+            }
+            .v-step:hover .v-card {
+                border-color: #e67e22;
+            }
+            .v-card b { color: #e67e22; display: block; font-size: 1.1rem; }
+            .v-card span { color: #8b949e; font-size: 0.85rem; }
+
+            .v-popup {
+                position: absolute;
+                left: 55%;
+                width: 280px;
+                background: #1c2128;
+                border: 1px solid #e67e22;
+                border-radius: 8px;
+                padding: 15px;
+                color: white;
+                font-size: 0.85rem;
+                opacity: 0;
+                visibility: hidden;
+                transition: all 0.3s ease;
+                box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+                transform: translateX(20px);
+            }
+            .v-step:hover .v-popup {
+                visibility: visible;
+                opacity: 1;
+                transform: translateX(0px);
+            }
+
+            .v-popup::before {
+                content: "";
+                position: absolute;
+                top: 15px;
+                right: 100%;
+                border-width: 8px;
+                border-style: solid;
+                border-color: transparent #e67e22 transparent transparent;
+            }
+        </style>
+
+        <div class="main-container">
+            <div class="v-line"></div>
+            <div class="v-wrapper">
+
+                <!-- 2026 (EN HAUT MAINTENANT) -->
+                <div class="v-step">
+                    <div class="v-card" style="border-color: #e67e22;"><b>2026</b><span>Site Officiel</span></div>
+                    <div class="v-dot" style="background: #e67e22;"></div>
+                    <div class="v-popup">
+                        <b>VISION 2026 :</b><br>
+                        Lancement du Hub communautaire, du shop et de l'expérience membre. C'est l'objectif actuel !
+                    </div>
                 </div>
-            </div>
 
-            <!-- SECTION 2016 -->
-            <div style="margin-bottom: 60px; position: relative;">
-                <div style="position: absolute; left: -53px; top: 6px; width: 22px; height: 22px; background: #0d1117; border: 3px solid #e67e22; border-radius: 50%; outline: 10px solid #0d1117; z-index: 2; box-sizing: border-box;"></div>
-                <h3 style="color: #e67e22; margin: 0; font-size: 1.5rem; line-height: 1.2;">2016</h3>
-                <div style="background: #161b22; border: 1px solid #30363d; border-radius: 12px; padding: 20px; margin-top: 15px; color: white;">
-                    <b>Arrivée de Xanna La Nooblette</b> : Élargissement des contenus et de la communauté.
+                <!-- 2024 -->
+                <div class="v-step">
+                    <div class="v-card"><b>2024</b><span>Over_1 => F.O.S</span></div>
+                    <div class="v-dot"></div>
+                    <div class="v-popup">
+                        <b>REBRANDING :</b><br>
+                        Transition vers Fr33zy Over Studio pour une identité plus forte.
+                    </div>
                 </div>
+               # <!-- 2024 -->
             </div>
-
-            <!-- SECTION 2012 -->
-            <div style="margin-bottom: 20px; position: relative;">
-                <div style="position: absolute; left: -53px; top: 6px; width: 22px; height: 22px; background: #0d1117; border: 3px solid #e67e22; border-radius: 50%; outline: 10px solid #0d1117; z-index: 2; box-sizing: border-box;"></div>
-                <h3 style="color: #e67e22; margin: 0; font-size: 1.5rem; line-height: 1.2;">2012 - OVER_1 : LE PASSÉ</h3>
-                <div style="background: #161b22; border: 1px solid #30363d; border-radius: 12px; padding: 20px; margin-top: 15px; color: white;">
-                    <p style="margin-top:0; color:#e67e22; font-weight:bold; font-size: 1.1rem; margin-bottom: 10px;">Émissions de la chaîne :</p>
-                <ul style="list-style-type: none; padding-left: 0; font-size: 0.95rem; line-height: 1.6; margin: 0;">
-                        <li>📺 <b>Le JT</b> : L'actualité vue par Over.</li>
-                        <li>👍👎 <b>J'aime / J'aime pas</b> : L'émission d'opinion.</li>
-                        <li>🧠 <b>Qui veut passer pour un inculte ?</b> : Le jeu mythique.</li>
-                        <li>🛡️ <b>Bureau des Plaintes</b> : Le rendez-vous incontournable.</li>
-                        <li>🎮 <b>L'Overzone</b> : Tests et reviews de jeux vidéo.</li>
-                        <li>🎬 <b>Mais aussi</b> : Parodies, Bande-annonces et Best-of du JT.</li>
-                    </ul>
-                </div>
-            </div>
-
         </div>
-    </div>
-    """
-    components.html(html_vert, height=850)
+        """
+    components.html(html_vertical_inverted_dates, height=700)
 
 elif st.session_state.active_tab == "CONTACT":
     st.subheader("📩 NOUS CONTACTER")
