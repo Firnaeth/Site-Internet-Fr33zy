@@ -368,7 +368,7 @@ elif st.session_state.active_tab == "PROJETS":
             <!-- SECTION 2012 -->
             <div style="margin-bottom: 20px; position: relative;">
                 <div style="position: absolute; left: -53px; top: 6px; width: 22px; height: 22px; background: #0d1117; border: 3px solid #e67e22; border-radius: 50%; outline: 10px solid #0d1117; z-index: 2; box-sizing: border-box;"></div>
-                <h3 style="color: #e67e22; margin: 0; font-size: 1.5rem; line-height: 1.2;">2012 - OVER_1</h3>
+                <h3 style="color: #e67e22; margin: 0; font-size: 1.5rem; line-height: 1.2;">2012 - OVER_1 : LE PASSÉ</h3>
                 <div style="background: #161b22; border: 1px solid #30363d; border-radius: 12px; padding: 20px; margin-top: 15px; color: white;">
                     <p style="margin-top:0; color:#e67e22; font-weight:bold; font-size: 1.1rem; margin-bottom: 10px;">Émissions de la chaîne :</p>
                 <ul style="list-style-type: none; padding-left: 0; font-size: 0.95rem; line-height: 1.6; margin: 0;">
