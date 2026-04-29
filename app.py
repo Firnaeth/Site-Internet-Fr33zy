@@ -333,9 +333,11 @@ elif st.session_state.active_tab == "QUI SOMMES-NOUS":
 elif st.session_state.active_tab == "PROJETS":
     st.subheader("📁 PARCOURS & RÉALISATIONS")
     
-    html_vert = """
-    <div style="background-color: #0d1117; display: flex; justify-content: center; padding: 20px; font-family: sans-serif;">
-        <div style="position: relative; width: 100%; max-width: 600px; border-left: 4px solid #e67e22; margin: 40px auto; padding-left: 40px; min-height: 400px">
+html_vert = """
+    <div style="background-color: #0d1117; display: flex; justify-content: center; padding: 20px 10px; font-family: sans-serif;">
+        <!-- CONTENEUR PRINCIPAL -->
+        <!-- La barre fait 4px. On utilise margin-left pour laisser de la place aux cercles -->
+        <div style="position: relative; width: 100%; max-width: 750px; border-left: 4px solid #e67e22; margin-left: 60px; padding-left: 40px; padding-bottom: 20px; box-sizing: border-box;">
             
             <!-- 2026 -->
             <div style="margin-bottom: 60px; position: relative;">
