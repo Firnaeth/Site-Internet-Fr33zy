@@ -262,7 +262,7 @@ elif st.session_state.active_tab == "QUI SOMMES-NOUS":
         <div style="background: #161b22; padding: 30px; border-radius: 15px; border: 1px solid #30363d; margin-bottom: 20px;">
             <h2 style="color: #e67e22; margin-top: 0;">BIENVENUE CHEZ FR33ZY OVER STUDIO</h2>
             <p style="font-size: 1.1rem; line-height: 1.6; color: #e1e4e8;">
-                Depuis 2012, nous partageons notre passion pour l'univers du gaming. Anciennement connue sous le nom de Over_1, notre équipe évolue pour vous proposer une expérience communautaire unique, mêlant expertise technique et amour du jeu</b>.
+                Depuis 2012, nous partageons notre passion pour l'univers du gaming, notre équipe évolue pour vous proposer une expérience communautaire unique, mêlant expertise technique et amour du jeu</b>.
             </p>
         </div>
     """, unsafe_allow_html=True)
