@@ -329,48 +329,57 @@ elif st.session_state.active_tab == "QUI SOMMES-NOUS":
             '<a href="https://www.youtube.com/@Fr33zyOverStudio" class="custom-button-link">S\'ABONNER SUR YOUTUBE</a>',
             unsafe_allow_html=True)
 
-# --- PAGE : PROJETS (Timeline Verticale avec Historique Over_1) ---
+# --- PAGE : PROJETS (Timeline Verticale Alignement Parfait) ---
 elif st.session_state.active_tab == "PROJETS":
     st.subheader("📁 PARCOURS & RÉALISATIONS")
     
-html_vert = """
+    html_vert = """
     <div style="background-color: #0d1117; display: flex; justify-content: center; padding: 20px 10px; font-family: sans-serif;">
         <!-- CONTENEUR PRINCIPAL -->
         <!-- La barre fait 4px. On utilise margin-left pour laisser de la place aux cercles -->
         <div style="position: relative; width: 100%; max-width: 750px; border-left: 4px solid #e67e22; margin-left: 60px; padding-left: 40px; padding-bottom: 20px; box-sizing: border-box;">
             
-            <!-- 2026 -->
+            <!-- FONCTIONNEMENT DU CALCUL : 
+                 La barre est à '0' du bord gauche du conteneur.
+                 Le cercle fait 22px de large. 
+                 Le centre du cercle est à 11px.
+                 Le centre de la barre est à 2px (puisqu'elle fait 4px).
+                 On décale donc de -53px (40px de padding + 11px de demi-cercle + 2px d'ajustement).
+            -->
+
+            <!-- SECTION 2026 -->
             <div style="margin-bottom: 60px; position: relative;">
-                <div style="position: absolute; left: -53px; top: 8px; width: 22px; height: 22px; background: #e67e22; border: 3px solid #e67e22; border-radius: 50%; outline: 10px solid #0d1117; z-index: 2;"></div>
-                <h3 style="color: #e67e22; margin: 0;">2026 - L'ÈRE MODERNE</h3>
-                <div style="background: #161b22; border: 1px solid #30363d; border-radius: 12px; padding: 20px; margin-top: 10px; color: white;">
-                    <b>Lancement du Site Officiel</b> : Centralisation de l'univers FOS, boutique et projets communautaires.
+                <div style="position: absolute; left: -53px; top: 6px; width: 22px; height: 22px; background: #e67e22; border: 3px solid #e67e22; border-radius: 50%; outline: 10px solid #0d1117; z-index: 2; box-sizing: border-box;"></div>
+                <h3 style="color: #e67e22; margin: 0; font-size: 1.5rem; line-height: 1.2;">2026</h3>
+                <div style="background: #161b22; border: 1px solid #30363d; border-radius: 12px; padding: 20px; margin-top: 15px; color: white;">
+                    <b>Lancement du Site Officiel</b> : Centralisation de l'univers FOS et nouveaux projets.
                 </div>
             </div>
 
-            <!-- 2016 -->
+            <!-- SECTION 2016 -->
             <div style="margin-bottom: 60px; position: relative;">
-                <div style="position: absolute; left: -53px; top: 8px; width: 22px; height: 22px; background: #0d1117; border: 3px solid #e67e22; border-radius: 50%; outline: 10px solid #0d1117; z-index: 2;"></div>
-                <h3 style="color: #e67e22; margin: 0;">2016 - LE DUO</h3>
-                <div style="background: #161b22; border: 1px solid #30363d; border-radius: 12px; padding: 20px; margin-top: 10px; color: white;">
-                    <b>Arrivée de Xanna La Nooblette</b> : Le studio prend une nouvelle dimension avec des contenus plus variés et une interaction accrue avec la communauté.
+                <div style="position: absolute; left: -53px; top: 6px; width: 22px; height: 22px; background: #0d1117; border: 3px solid #e67e22; border-radius: 50%; outline: 10px solid #0d1117; z-index: 2; box-sizing: border-box;"></div>
+                <h3 style="color: #e67e22; margin: 0; font-size: 1.5rem; line-height: 1.2;">2016</h3>
+                <div style="background: #161b22; border: 1px solid #30363d; border-radius: 12px; padding: 20px; margin-top: 15px; color: white;">
+                    <b>Arrivée de Xanna La Nooblette</b> : Élargissement des contenus et de la communauté.
                 </div>
             </div>
 
-            <!-- 2012 -->
-            <div style="margin-bottom: 60px; position: relative;">
-                <div style="position: absolute; left: -53px; top: 8px; width: 22px; height: 22px; background: #0d1117; border: 3px solid #e67e22; border-radius: 50%; outline: 10px solid #0d1117; z-index: 2;"></div>
-                <h3 style="color: #e67e22; margin: 0;">2012 - LES ORIGINES (OVER_1)</h3>
-                <div style="background: #161b22; border: 1px solid #30363d; border-radius: 12px; padding: 20px; margin-top: 10px; color: white;">
-                    <p style="margin-top:0; color:#e67e22; font-weight:bold;">Émissions Cultes :</p>
-                    <ul style="list-style-type: none; padding-left: 0; font-size: 0.95rem; line-height: 1.6;">
-                        <li>📺 <b>Le JT</b> : L'actualité vue par Over.</li>
-                        <li>👍👎 <b>J'aime / J'aime pas</b> : L'émission d'opinion.</li>
-                        <li>🧠 <b>Qui veut passer pour un inculte ?</b> : Le jeu mythique.</li>
-                        <li>🛡️ <b>Bureau des Plaintes</b> : Le rendez-vous incontournable.</li>
-                        <li>🎮 <b>L'Overzone</b> : Tests et reviews de jeux vidéo.</li>
-                        <li>🎬 <b>Mais aussi</b> : Parodies, Bande-annonces et Best-of du JT.</li>
-                    </ul>
+            <!-- SECTION 2012 -->
+            <div style="margin-bottom: 20px; position: relative;">
+                <div style="position: absolute; left: -53px; top: 6px; width: 22px; height: 22px; background: #0d1117; border: 3px solid #e67e22; border-radius: 50%; outline: 10px solid #0d1117; z-index: 2; box-sizing: border-box;"></div>
+                <h3 style="color: #e67e22; margin: 0; font-size: 1.5rem; line-height: 1.2;">2012 - OVER_1</h3>
+                <div style="background: #161b22; border: 1px solid #30363d; border-radius: 12px; padding: 20px; margin-top: 15px; color: white;">
+                    <p style="margin-top:0; color:#e67e22; font-weight:bold; font-size: 1.1rem; margin-bottom: 10px;">Émissions de la chaîne :</p>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; font-size: 0.95rem;">
+                        <div style="display:flex; align-items:center; gap:8px;"><span>📺</span> Le JT</div>
+                        <div style="display:flex; align-items:center; gap:8px;"><span>👍</span> J'aime / J'aime pas</div>
+                        <div style="display:flex; align-items:center; gap:8px;"><span>🧠</span> Qui veut passer pour un inculte ?</div>
+                        <div style="display:flex; align-items:center; gap:8px;"><span>🎬</span> Bande-annonces & Parodies</div>
+                        <div style="display:flex; align-items:center; gap:8px;"><span>🛡️</span> Bureau des Plaintes</div>
+                        <div style="display:flex; align-items:center; gap:8px;"><span>🎮</span> L'Overzone (Tests)</div>
+                        <div style="display:flex; align-items:center; gap:8px;"><span>⭐</span> Best-of des JT</div>
+                    </div>
                 </div>
             </div>
 
