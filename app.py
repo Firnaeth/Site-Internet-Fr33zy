@@ -250,7 +250,7 @@ elif st.session_state.active_tab == "CONTACT":
     c1, c2 = st.columns(2)
     with c1:
         st.markdown("### 📧 EMAIL")
-        st.markdown('<a href="mailto:contact@fr33zyoverstudio.fr" class="custom-button-link">CONTACTER PAR EMAIL</a>',
+        st.markdown('<a href="mailto:contact.fr33zy0verstudio@gmail.com" class="custom-button-link">CONTACTER PAR EMAIL</a>',
                     unsafe_allow_html=True)
     with c2:
         st.markdown("### 💬 COMMUNAUTÉ")
