@@ -338,7 +338,7 @@ elif st.session_state.active_tab == "PROJETS":
         <div style="position: relative; width: 100%; max-width: 600px; border-left: 4px solid #e67e22; margin: 40px auto; padding-left: 40px; min-height: 400px">
             
             <!-- 2026 -->
-            <div style="margin-bottom: 50px; position: relative;">
+            <div style="margin-bottom: 60px; position: relative;">
                 <div style="position: absolute; left: -53px; top: 8px; width: 22px; height: 22px; background: #e67e22; border: 3px solid #e67e22; border-radius: 50%; outline: 10px solid #0d1117; z-index: 2;"></div>
                 <h3 style="color: #e67e22; margin: 0;">2026 - L'ÈRE MODERNE</h3>
                 <div style="background: #161b22; border: 1px solid #30363d; border-radius: 12px; padding: 20px; margin-top: 10px; color: white;">
@@ -347,7 +347,7 @@ elif st.session_state.active_tab == "PROJETS":
             </div>
 
             <!-- 2016 -->
-            <div style="margin-bottom: 50px; position: relative;">
+            <div style="margin-bottom: 60px; position: relative;">
                 <div style="position: absolute; left: -53px; top: 8px; width: 22px; height: 22px; background: #0d1117; border: 3px solid #e67e22; border-radius: 50%; outline: 10px solid #0d1117; z-index: 2;"></div>
                 <h3 style="color: #e67e22; margin: 0;">2016 - LE DUO</h3>
                 <div style="background: #161b22; border: 1px solid #30363d; border-radius: 12px; padding: 20px; margin-top: 10px; color: white;">
@@ -356,7 +356,7 @@ elif st.session_state.active_tab == "PROJETS":
             </div>
 
             <!-- 2012 -->
-            <div style="margin-bottom: 50px; position: relative;">
+            <div style="margin-bottom: 60px; position: relative;">
                 <div style="position: absolute; left: -53px; top: 8px; width: 22px; height: 22px; background: #0d1117; border: 3px solid #e67e22; border-radius: 50%; outline: 10px solid #0d1117; z-index: 2;"></div>
                 <h3 style="color: #e67e22; margin: 0;">2012 - LES ORIGINES (OVER_1)</h3>
                 <div style="background: #161b22; border: 1px solid #30363d; border-radius: 12px; padding: 20px; margin-top: 10px; color: white;">
