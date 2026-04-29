@@ -135,8 +135,8 @@ CREATEURS = {
 
 # --- NAVIGATION (MISE À JOUR : 6 COLONNES) ---
 st.write("---")
-cols_nav = st.columns(6)  # Changé de 4 à 6
-btns = ["QUI SOMMES-NOUS", "L'ÉQUIPE", "PROJETS", "SHOP", "CONTACT", "DON"]
+cols_nav = st.columns(6)  # Changé de 4 à 7
+btns = ["QUI SOMMES-NOUS", "L'ÉQUIPE", "PROJETS", "SHOP", "CONTACT", "DON"] # "PHOTOS" est caché ici
 for i, btn in enumerate(btns):
     with cols_nav[i]:
         if st.button(btn, key=f"nav_{btn}", use_container_width=True):
@@ -584,11 +584,43 @@ elif st.session_state.active_tab == "PROJETS":
                         Transition vers Fr33zy Over Studio pour une identité plus forte.
                     </div>
                 </div>
-             
+               # <!-- 2024 -->
             </div>
         </div>
         """
     components.html(html_vertical_inverted_dates, height=700)
+
+elif st.session_state.active_tab == "PHOTOS":
+    st.subheader("📸 GALERIE F.O.S")
+    st.write("Retrouvez ici les moments forts du studio et nos visuels officiels.")
+    st.info("🚀 Ce module est en cours de construction. Revenez très bientôt !")
+
+    # Bloc de maintenance visuel (comme DON)
+    st.markdown("""
+            <div style="text-align: center; padding: 40px; border: 1px dashed #30363d; border-radius: 10px; opacity: 0.6; margin-top:20px;">
+                <p style="font-size: 1.2rem; color: #e67e22;">🚧 MODULE BOUTIQUE EN CONSTRUCTION 🚧</p>
+                <p style="font-size: 0.9rem;">Nous sélectionnons les meilleurs produits pour vous garantir une qualité premium.</p>
+            </div>
+        """, unsafe_allow_html=True)
+
+    # On crée des colonnes pour organiser les photos
+    col1, col2, col3 = st.columns(3)
+
+    with col1:
+        st.image("https://via.placeholder.com/400x300", caption="Moment culte #1", use_container_width=True)
+        st.image("https://via.placeholder.com/400x500", caption="Le Studio en 2024", use_container_width=True)
+
+    with col2:
+        st.image("https://via.placeholder.com/400x600", caption="Setup Stream", use_container_width=True)
+        st.image("https://via.placeholder.com/400x300", caption="Logo Over_1 (Archives)", use_container_width=True)
+
+    with col3:
+        st.image("https://via.placeholder.com/400x300", caption="Xanna & Fr33zy", use_container_width=True)
+        st.image("https://via.placeholder.com/400x400", caption="Projet 2026", use_container_width=True)
+
+    # Petite astuce : tu peux aussi ajouter un bouton pour ouvrir ton Instagram ou Flickr
+    st.divider()
+    st.link_button("Voir plus de photos sur Instagram", "https://instagram.com/ton_compte")
 
 elif st.session_state.active_tab == "CONTACT":
     st.subheader("📩 NOUS CONTACTER")
