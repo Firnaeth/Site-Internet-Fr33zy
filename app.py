@@ -584,7 +584,7 @@ elif st.session_state.active_tab == "PROJETS":
                         Transition vers Fr33zy Over Studio pour une identité plus forte.
                     </div>
                 </div>
-               # ---  <!-- 2024 -->
+               # --- <!-- 2024 --> ---
             </div>
         </div>
         """
