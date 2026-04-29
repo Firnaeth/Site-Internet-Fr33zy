@@ -371,15 +371,14 @@ elif st.session_state.active_tab == "PROJETS":
                 <h3 style="color: #e67e22; margin: 0; font-size: 1.5rem; line-height: 1.2;">2012 - OVER_1</h3>
                 <div style="background: #161b22; border: 1px solid #30363d; border-radius: 12px; padding: 20px; margin-top: 15px; color: white;">
                     <p style="margin-top:0; color:#e67e22; font-weight:bold; font-size: 1.1rem; margin-bottom: 10px;">Émissions de la chaîne :</p>
-                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; font-size: 0.9rem;">
-                        <div>📺 Le JT</div>
-                        <div>👍 J'aime / J'aime pas</div>
-                        <div>🧠 Qui veut passer pour un inculte ?</div>
-                        <div>🎬 Bande-annonces & Parodies</div>
-                        <div>🛡️ Bureau des Plaintes</div>
-                        <div>🎮 L'Overzone (Tests)</div>
-                        <div>⭐ Best-of des JT</div>
-                    </div>
+                <ul style="list-style-type: none; padding-left: 0; font-size: 0.95rem; line-height: 1.6; margin: 0;">
+                        <li>📺 <b>Le JT</b> : L'actualité vue par Over.</li>
+                        <li>👍👎 <b>J'aime / J'aime pas</b> : L'émission d'opinion.</li>
+                        <li>🧠 <b>Qui veut passer pour un inculte ?</b> : Le jeu mythique.</li>
+                        <li>🛡️ <b>Bureau des Plaintes</b> : Le rendez-vous incontournable.</li>
+                        <li>🎮 <b>L'Overzone</b> : Tests et reviews de jeux vidéo.</li>
+                        <li>🎬 <b>Mais aussi</b> : Parodies, Bande-annonces et Best-of du JT.</li>
+                    </ul>
                 </div>
             </div>
 
