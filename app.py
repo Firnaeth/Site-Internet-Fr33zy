@@ -371,14 +371,14 @@ elif st.session_state.active_tab == "PROJETS":
                 <h3 style="color: #e67e22; margin: 0; font-size: 1.5rem; line-height: 1.2;">2012 - OVER_1</h3>
                 <div style="background: #161b22; border: 1px solid #30363d; border-radius: 12px; padding: 20px; margin-top: 15px; color: white;">
                     <p style="margin-top:0; color:#e67e22; font-weight:bold; font-size: 1.1rem; margin-bottom: 10px;">Émissions de la chaîne :</p>
-                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; font-size: 0.95rem;">
-                        <div style="display:flex; align-items:center; gap:8px;"><span>📺</span> Le JT</div>
-                        <div style="display:flex; align-items:center; gap:8px;"><span>👍</span> J'aime / J'aime pas</div>
-                        <div style="display:flex; align-items:center; gap:8px;"><span>🧠</span> Qui veut passer pour un inculte ?</div>
-                        <div style="display:flex; align-items:center; gap:8px;"><span>🎬</span> Bande-annonces & Parodies</div>
-                        <div style="display:flex; align-items:center; gap:8px;"><span>🛡️</span> Bureau des Plaintes</div>
-                        <div style="display:flex; align-items:center; gap:8px;"><span>🎮</span> L'Overzone (Tests)</div>
-                        <div style="display:flex; align-items:center; gap:8px;"><span>⭐</span> Best-of des JT</div>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; font-size: 0.9rem;">
+                        <div>📺 Le JT</div>
+                        <div>👍 J'aime / J'aime pas</div>
+                        <div>🧠 Qui veut passer pour un inculte ?</div>
+                        <div>🎬 Bande-annonces & Parodies</div>
+                        <div>🛡️ Bureau des Plaintes</div>
+                        <div>🎮 L'Overzone (Tests)</div>
+                        <div>⭐ Best-of des JT</div>
                     </div>
                 </div>
             </div>
