@@ -4,7 +4,7 @@ import streamlit.components.v1 as components  # Ajout crucial pour les timelines
 # --- DEFINITION DES INFOS TECHNIQUES ---
 VERSION = "0.0.1"
 LICENSE = "© 2026 FR33ZY OVER STUDIO - TOUS DROITS RÉSERVÉS"
-TOOLS = "POWERED BY OBS STUDIO • DAVINCI RESOLVE • STREAMLIT • PHOTOSHOP"
+TOOLS = "POWERED BY OBS STUDIO • DAVINCI RESOLVE • KDENLIVE • PHOTOSHOP • GIMP (GNU Image Manipulation Program) • STREAMLIT • "
 
 # --- CONFIGURATION DE LA PAGE ---
 st.set_page_config(
