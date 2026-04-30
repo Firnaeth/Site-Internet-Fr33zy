@@ -629,7 +629,7 @@ elif st.session_state.active_tab == "SHOP" or st.session_state.active_tab == "DO
     # Bloc de maintenance visuel (comme DON)
     st.markdown("""
             <div style="text-align: center; padding: 40px; border: 1px dashed #30363d; border-radius: 10px; opacity: 0.6; margin-top:20px;">
-                <p style="font-size: 1.2rem; color: #e67e22;">🚧 MODULE DON EN CONSTRUCTION 🚧</p>
+                <p style="font-size: 1.2rem; color: #e67e22;">🚧 MODULE EN CONSTRUCTION 🚧</p>
                 <p style="font-size: 0.9rem;">Nous sélectionnons les meilleurs produits pour vous garantir une qualité premium.</p>
             </div>
         """, unsafe_allow_html=True)
