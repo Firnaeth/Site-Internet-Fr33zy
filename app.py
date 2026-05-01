@@ -391,7 +391,7 @@ elif st.session_state.active_tab == "QUI SOMMES-NOUS":
                             • 📺 L'OverZone 90's<br>
                             • 👍 J'aime / J'aime pas<br>
                             • 🧠 Qui veut passer pour un inculte ?<br>
-                            • 🛡️ Bureau des Plaintes
+                            • 🛡️ Bureau des Plinthes
                         </div>
                         <div class="dot"></div>
                         <div class="card"><b>2012</b><span>Création d'Over_1</span></div>
