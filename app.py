@@ -125,8 +125,8 @@ CREATEURS = {
              "url": "https://www.youtube.com/playlist?list=PLD-GVWgeEc6fCdkCXg38Bcw7fm9YZcuzV"},
             {"nom": "Crime Scene Cleaner",
              "url": "https://www.youtube.com/playlist?list=PLD-GVWgeEc6dfycSPIsT9LmSuAa4rlSx9"},
-            {"nom": " Slime Rancher 2",
-             "url"https://www.youtube.com/playlist?list=PLD-GVWgeEc6diG7X1purupOBtHJqrZwnx"}
+            {"nom": "Slime Rancher 2",
+             "url": "https://www.youtube.com/playlist?list=PLD-GVWgeEc6diG7X1purupOBtHJqrZwnx"}
         ],
         "liens": "https://www.youtube.com/@xannalanooblette",
         "twitch_id": "xannalanooblette",
