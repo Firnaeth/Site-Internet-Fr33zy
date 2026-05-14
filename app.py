@@ -119,12 +119,14 @@ CREATEURS = {
         "desc": "Entre humour, fails épiques et aventures virtuelles, je transforme mes galères en gameplay pour vous offrir le meilleur du gaming (et du gâteau) avec style ! 🍰🎮",
         "jeux": ["Slime Rancher 2", "The Elder Scrolls V: Skyrim"],
         "series": [
-            {"nom": "Slime Rancher 2",
-             "url": "https://www.youtube.com/playlist?list=PLD-GVWgeEc6diG7X1purupOBtHJqrZwnx"},
+            {"nom": "Subnautica",
+             "url": "https://www.youtube.com/playlist?list=PLD-GVWgeEc6cWHG8Cg0liIoEaluph5mS0"},
             {"nom": "L'Épopée Féline",
              "url": "https://www.youtube.com/playlist?list=PLD-GVWgeEc6fCdkCXg38Bcw7fm9YZcuzV"},
             {"nom": "Crime Scene Cleaner",
              "url": "https://www.youtube.com/playlist?list=PLD-GVWgeEc6dfycSPIsT9LmSuAa4rlSx9"}
+            {"nom": " Slime Rancher 2",
+             "url"https://www.youtube.com/playlist?list=PLD-GVWgeEc6diG7X1purupOBtHJqrZwnx"}
         ],
         "liens": "https://www.youtube.com/@xannalanooblette",
         "twitch_id": "xannalanooblette",
