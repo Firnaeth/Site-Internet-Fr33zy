@@ -295,7 +295,7 @@ if st.session_state.theme == "Subnautica_2":
     
     st.write("")
     
-    # 🎯 Dictionnaire contenant tes textes d'origine nettoyés et mis à jour
+    # 🎯 Dictionnaire contenant tes textes d'origine pour le mode Cyan
     h_texts = {
         "2012": "<b>📁 ARCHIVE_2012 : CRÉATION DE LA CHAÎNE</b><br><br><span style='color: #00daff; margin-right: 8px;'>·</span> 📺 Programmes d'époque : Le JT & Best-off, L'OverZone 90's.<br><span style='color: #00daff; margin-right: 8px;'>·</span> 🔮 Concepts historiques : Qui veut passer pour un inculte ?, Bureau des Plinthes.",
         "2016": "<b>📁 ARCHIVE_2016 : L'ALLIANCE ET L'EXPANSION</b><br><br><span style='color: #00daff; margin-right: 8px;'>·</span> 👥 Arrivée de Xanna. Début du trio emblématique.<br><span style='color: #00daff; margin-right: 8px;'>·</span> 🎮 Expansion des formats et des projets multi-gaming.",
@@ -323,15 +323,11 @@ if st.session_state.theme == "Subnautica_2":
     """
     st.markdown(box_style_home, unsafe_allow_html=True)
     
-    # Affichage dynamique et unique de la box selon l'année sélectionnée
-    st.markdown(f"""
-    <div class="subnautica-box-base">
-        {h_texts[st.session_state.Subnautica_2_story_year]}
-    </div>
-    """, unsafe_allow_html=True)
+    # Affichage de la box correspondante à l'année cliquée
+    st.markdown(f'<div class="subnautica-box-base">{h_texts[st.session_state.Subnautica_2_story_year]}</div>', unsafe_allow_html=True)
 
+# 🍊 MODE CLASSIC (Orange)
 else:
-    # Configuration de la couleur orange d'origine pour la frise
     dot_color = "#d37c2e"
     dot_hover_color = "#ff8c2e"
 
@@ -341,7 +337,6 @@ else:
         .timeline-wrapper {{ display: flex; justify-content: space-between; align-items: flex-start; position: relative; min-width: 600px; }}
         .timeline-line {{ position: absolute; top: 7px; left: 12%; right: 12%; height: 2px; background: #242c34; z-index: 1; }}
         .timeline-node {{ text-align: center; width: 33%; position: relative; z-index: 2; cursor: pointer; }}
-
         .timeline-dot {{ 
             display: block !important;
             width: 14px !important; 
@@ -354,7 +349,6 @@ else:
             box-shadow: 0 0 10px {dot_color}; 
             transition: transform 0.2s ease, background-color 0.2s; 
         }}
-
         .timeline-node:hover .timeline-dot {{ transform: scale(1.3); background-color: {dot_hover_color} !important; box-shadow: 0 0 15px {dot_hover_color}; }}
         .timeline-year {{ font-weight: bold; color: {dot_color}; font-size: 0.95rem; letter-spacing: 1px; }}
         .timeline-node .popup-box {{ visibility: hidden; width: 260px; background-color: #121820; color: #cbd5e1; text-align: left; border: 1px solid {dot_color}; border-radius: 6px; padding: 12px; position: absolute; z-index: 10; top: 110%; left: 50%; transform: translateX(-50%); opacity: 0; transition: opacity 0.2s ease, transform 0.2s ease; font-family: sans-serif; font-size: 0.8rem; line-height: 1.4; box-shadow: 0 4px 15px rgba(0,0,0,0.6); }}
@@ -399,7 +393,7 @@ else:
     """
     st.components.v1.html(html_timeline_fixed_popups, height=220)
 
-    # --- RÉINTÉGRATION DES BLOCS INFERIEURS : AU PROGRAMME & NOTRE VISION ---
+  # --- RÉINTÉGRATION DES BLOCS INFERIEURS : AU PROGRAMME & NOTRE VISION ---
     st.markdown('<hr style="border-color: #242c34; margin-top: 30px; margin-bottom: 30px;">', unsafe_allow_html=True)
 
     col_prog, col_vision = st.columns(2)
@@ -424,8 +418,9 @@ else:
         """, unsafe_allow_html=True)
         st.link_button("S'ABONNER SUR YOUTUBE", "https://www.youtube.com/@Fr33zyOverStudio", use_container_width=True)
 
+
 # --- 👥 ONGLET L'ÉQUIPE ---
-else st.session_state.active_tab == "L'ÉQUIPE":
+elif st.session_state.active_tab == "L'ÉQUIPE":
 
     # SI UN PROFIL INDIVIDUEL EST SÉLECTIONNÉ
     if st.session_state.current_profile:
