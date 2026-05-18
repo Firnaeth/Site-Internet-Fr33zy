@@ -577,9 +577,9 @@ elif st.session_state.active_tab == "L'ÉQUIPE":
 elif st.session_state.active_tab == "PROJETS":
     st.markdown(f'### 📂 NOS PROJETS & VISION')
 
+    # 🌊 MODE SUBNAUTICA (Cyan)
     if st.session_state.theme == "Subnautica_2":
-if st.session_state.theme == NOM_THEME_CYAN:
-        # 🎯 SÉCURITÉ : Si la variable n'existe pas au démarrage, on lui donne "2024" par défaut
+        # 🎯 SÉCURITÉ INITIALISATION : Évite le crash au démarrage du site
         if "subnautica_project_year" not in st.session_state:
             st.session_state.subnautica_project_year = "2024"
 
@@ -588,10 +588,10 @@ if st.session_state.theme == NOM_THEME_CYAN:
         
         for idx, (yr, label) in enumerate(proj_milestones):
             with cols_p[idx]:
-                # On utilise le clic pour mettre à jour la session_state et on force le rerun pour appliquer le changement
+                # Le bouton met à jour la variable et force le rechargement immédiat
                 if st.button(label, key=f"proj_btn_{yr}", use_container_width=True):
                     st.session_state.subnautica_project_year = yr
-                    st.rerun() # 🚀 Force Streamlit à rafraîchir l'affichage du texte immédiatement !
+                    st.rerun() 
         
         st.write("")
         p_texts = {
@@ -600,15 +600,15 @@ if st.session_state.theme == NOM_THEME_CYAN:
             "2026": "Ouverture de la boutique officielle Fr33zy Over Studio."
         }
         
-        # Affichage de la box Subnautica
+        # Boîte d'affichage Subnautica corrigée (sans le 'l' à p_texts)
         st.markdown(f'<div class="subnautica-box"><b>OBJECTIF_{st.session_state.subnautica_project_year} :</b><br>{p_texts[st.session_state.subnautica_project_year]}</div>', unsafe_allow_html=True)
         
-    # 🎯 CORRECTION ICI : On utilise 'elif' au lieu de 'else' pour ne pas bloquer les onglets suivants
+    # 🍊 MODE CLASSIC (Orange)
     elif st.session_state.theme != "Subnautica_2":
         dot_color = "#d37c2e"
         html_v_timeline = f"""
         <style>
-            /* 🎯 Conteneur principal centré sur la page */
+            /* 🎯 Centrage parfait sur la page sans fond noir opaque */
             .tl-wrapper {{
                 display: flex;
                 justify-content: center;
@@ -620,7 +620,7 @@ if st.session_state.theme == NOM_THEME_CYAN:
                 background: transparent; 
                 font-family: sans-serif; 
                 width: 100%;
-                max-width: 600px; /* Aligne proprement le bloc au centre sans l'étirer à l'infini */
+                max-width: 600px;
             }}
             .tl-v-line {{ position: absolute; top: 10px; bottom: 10px; left: 46px; width: 2px; background: #242c34; }}
             .tl-v-node {{ position: relative; padding-left: 40px; margin-bottom: 40px; }}
