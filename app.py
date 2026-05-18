@@ -256,23 +256,6 @@ CREATEURS = {
         "jeux": "Subnautica 2, The Elder Scrolls V: Skyrim, Crime Scene Cleaner",
         "planning_text": "VOIR LE PLANNING SUR TWITCH",
         "planning_url": "https://twitch.tv/xannalanooblette/schedule"
-    },
-    "None": {
-        "role": "Son Rôle / Titre",
-        "img": "https://unavatar.io/youtube/SonPseudoYoutube",
-        "desc": "Mets ici sa description personnalisée ou sa petite biographie. Bienvenue dans l'équipe !",
-        "youtube": "https://youtube.com",
-        "twitch": "https://twitch.tv",
-        "instagram": "https://instagram.com",
-        "threads": None,
-        "discord": "https://discord.gg/h4r2MSgJSk",
-        "series": [
-            ("🎬 PREMIÈRE SÉRIE", "https://youtube.com"),
-            ("🎮 SECONDE SÉRIE", "https://youtube.com")
-        ],
-        "jeux": "Mets ici ses jeux favoris",
-        "planning_text": "VOIR SON PLANNING",
-        "planning_url": "https://twitch.tv"
     }
 }
 
@@ -598,7 +581,7 @@ elif st.session_state.active_tab == "PROJETS":
     # --- MODE Subnautica_2 : BOUTONS PDA ---
     if st.session_state.theme == "Subnautica_2":
         cols_p = st.columns(3)
-        proj_milestones = [("2026", "🌐 SITE V1"), ("2024", "🎬 TRANSITION"), ("2025", "🛒 SHOP")]
+        proj_milestones = [("2026", "🌐 SITE V1"), ("2024", "🎬 TRANSITION")]
         for idx, (yr, label) in enumerate(proj_milestones):
             with cols_p[idx]:
                 if st.button(label, key=f"proj_btn_{yr}", use_container_width=True):
@@ -606,9 +589,8 @@ elif st.session_state.active_tab == "PROJETS":
 
         st.write("")
         p_texts = {
-            "2026": "Lancement du Hub communautaire, du shop et de l'expérience membre. C'est l'objectif actuel !",
+            "2026": "Lancement du Hub communautaire, de l'expérience membre. C'est l'objectif actuel !",
             "2024": "Transition vers Fr33zy Over Studio pour une identité plus forte.",
-            "2025": "Ouverture de la boutique officielle Fr33zy Over Studio."
         }
         st.markdown(
             f'<div class="Subnautica_2-box"><b>OBJECTIF_{st.session_state.Subnautica_2_project_year} :</b><br>{p_texts[st.session_state.Subnautica_2_project_year]}</div>',
@@ -629,7 +611,6 @@ elif st.session_state.active_tab == "PROJETS":
         <div class="tl-v-cont"><div class="tl-v-line"></div>
             <div class="tl-v-node"><div class="tl-v-dot"></div><div class="tl-v-year">2026</div><div class="tl-v-desc"><b>SITE WEB V1 :</b>Lancement du Hub communautaire, du shop et de l'expérience membre. C'est l'objectif actuel !</div></div>
             <div class="tl-v-node"><div class="tl-v-dot"></div><div class="tl-v-year">2024</div><div class="tl-v-desc"><b>TRANSITION :</b>Over_1 vers Fr33zy Over Studio pour une identité plus forte.</div></div>
-            <div class="tl-v-node"><div class="tl-v-dot"></div><div class="tl-v-year">2024</div><div class="tl-v-desc"><b>SHOP :</b> Ouverture de la boutique Merch officielle.</div></div>
         </div>
         """
         components.html(html_v_timeline, height=350)
