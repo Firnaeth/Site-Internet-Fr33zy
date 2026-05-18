@@ -572,32 +572,28 @@ elif st.session_state.active_tab == "L'ÉQUIPE":
                         st.rerun()
 
 # =========================================================================
-# 📁 ONGLET : PROJETS (ADAPTATION DEMANDÉE)
+# 📁 ONGLET : PROJETS
 # =========================================================================
 elif st.session_state.active_tab == "PROJETS":
-    accent_color = "#00d2ff" if st.session_state.theme == "Subnautica_2" else "#d37c2e"
-    st.markdown(f'### 📂 PROJETS & VISION')
+    st.markdown(f'### 📂 NOS PROJETS & VISION')
 
-    # --- MODE Subnautica_2 : BOUTONS PDA ---
-    if st.session_state.theme == "Subnautica_2":
+    if st.session_state.theme == NOM_THEME_CYAN:
         cols_p = st.columns(3)
-        proj_milestones = [("2026", "🌐 SITE V1"), ("2024", "🎬 TRANSITION")]
+        proj_milestones = [("2024", "🌐 SITE V1"), ("2025", "🎬 CROSSOVER"), ("2026", "🛒 SHOP")]
         for idx, (yr, label) in enumerate(proj_milestones):
             with cols_p[idx]:
                 if st.button(label, key=f"proj_btn_{yr}", use_container_width=True):
-                    st.session_state.Subnautica_2_project_year = yr
-
+                    st.session_state.subnautica_project_year = yr
+        
         st.write("")
         p_texts = {
-            "2026": "Lancement du Hub communautaire, de l'expérience membre. C'est l'objectif actuel !",
-            "2024": "Transition vers Fr33zy Over Studio pour une identité plus forte.",
+            "2024": "Déploiement du PDA interactif Streamlit pour centraliser l'équipe.",
+            "2025": "Lancement des premières séries collaboratives unifiées entre membres.",
+            "2026": "Ouverture de la boutique officielle Fr33zy Over Studio."
         }
-        st.markdown(
-            f'<div class="Subnautica_2-box"><b>OBJECTIF_{st.session_state.Subnautica_2_project_year} :</b><br>{p_texts[st.session_state.Subnautica_2_project_year]}</div>',
-            unsafe_allow_html=True)
+        st.markdown(f'<div class="subnautica-box"><b>OBJECTIF_{st.session_state.subnautica_project_year} :</b><br>{p_texts[st.session_state.subnautica_project_year]}</div>', unsafe_allow_html=True)
 
-    # --- MODE ORANGE : FRISE VERTICALE ---
-# 🎯 CORRECTION ICI : On utilise 'elif' au lieu de 'else' pour ne pas bloquer les onglets suivants
+    # 🎯 CORRECTION ICI : On utilise 'elif' au lieu de 'else' pour ne pas bloquer les onglets suivants
     elif st.session_state.theme != NOM_THEME_CYAN:
         dot_color = "#d37c2e"
         html_v_timeline = f"""
