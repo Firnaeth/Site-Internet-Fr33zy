@@ -655,16 +655,6 @@ elif st.session_state.active_tab == "PROJETS":
                 '<div class="subnautica-box-base"><b>🛰️ LOGS_2024 : DÉPLOIEMENT FR33ZY OVER STUDIO</b><br><br><span style="color: #00daff; margin-right: 8px;">·</span> 🌌 Intégration de la charte Subnautica 2 et refonte des serveurs communautaires.<br><span style="color: #00daff; margin-right: 8px;">·</span> 🛠️ Alignement des configurations OBS Studio, DaVinci Resolve et Streamlit HUD.</div>',
                 unsafe_allow_html=True)
 
-    # 🍊 MODE CLASSIC (Orange)
-    else:
-        # Tu pourras placer ici ta structure ou frise classique pour les projets si besoin
-        st.markdown(f"""
-        <div class="orange-card-classic">
-            <div class="orange-title-classic">PROJETS DU STUDIO (MODE CLASSIC)</div>
-            <div class="orange-text-classic">Retrouvez l'ensemble de nos archives de productions, séries de Let's Play et événements communautaires classés par année.</div>
-        </div>
-        """, unsafe_allow_html=True)
-
 # 🍊 MODE CLASSIC (Orange)
     else:
         dot_color = "#d37c2e"
