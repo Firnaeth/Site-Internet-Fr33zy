@@ -608,7 +608,7 @@ elif st.session_state.active_tab == "PROJETS":
 
         # Boutons HUD pour basculer entre les années de projets
         cols_p = st.columns(3)
-        project_milestones = [("2028", "📁 LOGS ANCIENS (2028)"), ("2027", "🗃️ ARCHIVES SÉRIES (2027)"), ("2026", "🛰️ INFRASTRUCTURE (2026)")]
+        project_milestones = [("2028", "📁 MODULE EN CONSTRUCTION (2028)"), ("2027", "🗃️ MODULE EN CONSTRUCTION (2027)"), ("2026", "🛰️ INFRASTRUCTURE (2026)")]
         
         for idx, (yr, label) in enumerate(project_milestones):
             with cols_p[idx]:
@@ -642,12 +642,12 @@ elif st.session_state.active_tab == "PROJETS":
         # Affichage conditionnel selon la base demandée
         if st.session_state.Subnautica_2_project_year == "2028":
             st.markdown(
-                """<div class="subnautica-box-base"><b>📁 LOGS_2028 : LES PREMIERS PROJETS VLOGS</b><br><br><span style="color: #00daff; margin-right: 8px;">·</span> 🎬 Lancement des premiers concepts originaux sur la plateforme.</div>""",
+                """<div class="subnautica-box-base"><b>📁 LOGS_2028 : MODULE EN CONSTRUCTION</b><br><br><span style="color: #00daff; margin-right: 8px;">·</span> Revenez très bientôt !</div>""",
                 unsafe_allow_html=True)
                 
         elif st.session_state.Subnautica_2_project_year == "2027":
             st.markdown(
-                """<div class="subnautica-box-base"><b>🗃️ LOGS_2027 : DIVERSIFICATION DES FORMATS</b><br><br><span style="color: #00daff; margin-right: 8px;">·</span> ⚔️ Multi-gaming intensif et création des premières séries coopératives.</div>""",
+                """<div class="subnautica-box-base"><b>🗃️ LOGS_2027 : MODULE EN CONSTRUCTION</b><br><br><span style="color: #00daff; margin-right: 8px;">·</span> Revenez très bientôt !</div>""",
                 unsafe_allow_html=True)
                 
         elif st.session_state.Subnautica_2_project_year == "2026":
@@ -681,9 +681,9 @@ elif st.session_state.active_tab == "PROJETS":
         </style>
         <div class="tl-wrapper">
             <div class="tl-v-cont"><div class="tl-v-line"></div>
+                <div class="tl-v-node"><div class="tl-v-dot"></div><div class="tl-v-year">2028</div><div class="tl-v-desc"><b>MODULE EN CONSTRUCTION :</b> Revenez très bientôt !</div></div>
+                <div class="tl-v-node"><div class="tl-v-dot"></div><div class="tl-v-year">2027</div><div class="tl-v-desc"><b>MODULE EN CONSTRUCTION :</b> Revenez très bientôt !</div></div>
                 <div class="tl-v-node"><div class="tl-v-dot"></div><div class="tl-v-year">2026</div><div class="tl-v-desc"><b>SITE WEB V1 :</b> Lancement du Hub communautaire, du shop et de l'expérience membre. C'est l'objectif actuel !</div></div>
-                <div class="tl-v-node"><div class="tl-v-dot"></div><div class="tl-v-year">2024</div><div class="tl-v-desc"><b>TRANSITION :</b> Over_1 vers Fr33zy Over Studio pour une identité plus forte.</div></div>
-                <div class="tl-v-node"><div class="tl-v-dot"></div><div class="tl-v-year">2024</div><div class="tl-v-desc"><b>SHOP :</b> Ouverture de la boutique Merch officielle.</div></div>
             </div>
         </div>
         """
