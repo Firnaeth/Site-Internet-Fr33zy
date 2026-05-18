@@ -278,32 +278,56 @@ if st.session_state.active_tab == "QUI SOMMES-NOUS":
         f'<h4 style="font-family:\'Orbitron\', sans-serif; color:{accent_color}; margin-top:20px; margin-bottom:25px;">📜 NOTRE PARCOURS</h4>',
         unsafe_allow_html=True)
 
+# 🌊 MODE SUBNAUTICA (Cyan)
     if st.session_state.theme == "Subnautica_2":
-        story_cols = st.columns(3)
-        years = ["2012", "2016", "2024"]
-        labels = ["🚀 ORIGINES (2012)", "👥 L'ALLIANCE (2016)", "⚓ NOUVELLE ÈRE (2024)"]
+        # 🎯 SÉCURITÉ INITIALISATION
+        if "subnautica_home_year" not in st.session_state:
+            st.session_state.subnautica_home_year = "2012"
 
-        for idx, yr in enumerate(years):
-            with story_cols[idx]:
-                is_selected = st.session_state.Subnautica_2_story_year == yr
-                st.markdown(f"""
-                    <style>
-                    div[data-testid='stColumn']:nth-of-type({idx + 1}) button {{
-                        border-color: {'#00d2ff !important' if is_selected else 'rgba(0, 210, 255, 0.3) !important'};
-                        color: {'#ffffff !important' if is_selected else '#00d2ff !important'};
-                        box-shadow: {'0 0 10px rgba(0, 210, 255, 0.4) !important' if is_selected else 'none !important'};
-                    }}
-                    </style>
-                """, unsafe_allow_html=True)
-                if st.button(labels[idx], key=f"btn_story_{yr}", use_container_width=True):
-                    st.session_state.Subnautica_2_story_year = yr
+        cols_h = st.columns(3)
+        home_milestones = [("2012", "🚀 ORIGINES (2012)"), ("2016", "👥 L'ALLIANCE (2016)"), ("2024", "⚓ NOUVELLE ÈRE (2024)")]
+        
+        for idx, (yr, label) in enumerate(home_milestones):
+            with cols_h[idx]:
+                if st.button(label, key=f"home_btn_{yr}", use_container_width=True):
+                    st.session_state.subnautica_home_year = yr
                     st.rerun()
-
+        
         st.write("")
-        if st.session_state.Subnautica_2_story_year == "2012":
-            st.markdown(
-                '<div class="Subnautica_2-box" style="border-left: 3px solid #00d2ff;"><div class="Subnautica_2-h1">📂 ARCHIVE_2012 : CRÉATION DE LA CHAÎNE</div><div class="Subnautica_2-p">• 📺 Programmes d\'époque : Le JT & Best-off, L\'OverZone 90\'s.<br>• 🧠 Concepts historiques : Qui veut passer pour un inculte ?, Bureau des Plinthes.</div></div>',
-                unsafe_allow_html=True)
+        h_texts = {
+            "2012": "Programmes d'époque : Le JT & Best-off, L'OverZone 90's.<br><span style='color: #00daff; margin-right: 8px;'>·</span> Concepts historiques : Qui veut passer pour un inculte ?, Bureau des Plinthes.",
+            "2016": "Structuration de l'équipe et début des projets multi-gaming réguliers.<br><span style='color: #00daff; margin-right: 8px;'>·</span> Ouverture des premiers serveurs communautaires dédiés.",
+            "2024": "Transition officielle vers l'identité visuelle et technique Fr33zy Over Studio.<br><span style='color: #00daff; margin-right: 8px;'>·</span> Modernisation globale des outils et refonte complète de l'infrastructure."
+        }
+        
+        # Le style d'origine de la box (Bordure fine, fond transparent)
+        box_style_home = """
+        <style>
+            .subnautica-box-base {
+                border: 1px solid #00daff;
+                border-radius: 4px;
+                padding: 15px 20px;
+                background-color: transparent;
+                box-shadow: inset 0 0 10px rgba(0, 218, 255, 0.05), 0 0 8px rgba(0, 218, 255, 0.1);
+                color: #ffffff;
+                font-family: 'Orbitron', sans-serif;
+                margin-top: 15px;
+                line-height: 1.6;
+            }
+            .subnautica-box-base b {
+                color: #00daff;
+            }
+        </style>
+        """
+        st.markdown(box_style_home, unsafe_allow_html=True)
+        
+        # Affichage sans bug avec le bon dictionnaire p_texts ou h_texts
+        st.markdown(f"""
+        <div class="subnautica-box-base">
+            <b>📁 ARCHIVE_{st.session_state.subnautica_home_year} : CRÉATION DE LA CHAÎNE</b><br><br>
+            <span style="color: #00daff; margin-right: 8px;">·</span> {h_texts[st.session_state.subnautica_home_year]}
+        </div>
+        """, unsafe_allow_html=True)
         elif st.session_state.Subnautica_2_story_year == "2016":
             st.markdown(
                 '<div class="Subnautica_2-box" style="border-left: 3px solid #00d2ff;"><div class="Subnautica_2-h1">📂 ARCHIVE_2016 : ALLIANCE</div><div class="Subnautica_2-p">• Arrivée de Xanna. Début du trio emblématique <br>• Expansion des formats.</div></div>',
