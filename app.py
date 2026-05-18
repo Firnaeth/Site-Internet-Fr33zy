@@ -577,7 +577,7 @@ elif st.session_state.active_tab == "L'ÉQUIPE":
 elif st.session_state.active_tab == "PROJETS":
     st.markdown(f'### 📂 NOS PROJETS & VISION')
 
-    if st.session_state.theme == Subnautica_2
+    if st.session_state.theme == Subnautica_2:
         cols_p = st.columns(3)
         proj_milestones = [("2024", "🌐 SITE V1"), ("2025", "🎬 CROSSOVER"), ("2026", "🛒 SHOP")]
         for idx, (yr, label) in enumerate(proj_milestones):
@@ -594,7 +594,7 @@ elif st.session_state.active_tab == "PROJETS":
         st.markdown(f'<div class="subnautica-box"><b>OBJECTIF_{st.session_state.subnautica_project_year} :</b><br>{p_texts[st.session_state.subnautica_project_year]}</div>', unsafe_allow_html=True)
 
     # 🎯 CORRECTION ICI : On utilise 'elif' au lieu de 'else' pour ne pas bloquer les onglets suivants
-    elif st.session_state.theme != Subnautica_2
+    elif st.session_state.theme != Subnautica_2:
         dot_color = "#d37c2e"
         html_v_timeline = f"""
         <style>
