@@ -600,8 +600,25 @@ elif st.session_state.active_tab == "PROJETS":
             "2026": "Ouverture de la boutique officielle Fr33zy Over Studio."
         }
         
-        # Boîte d'affichage Subnautica corrigée (sans le 'l' à p_texts)
-        st.markdown(f'<div class="subnautica-box"><b>OBJECTIF_{st.session_state.subnautica_project_year} :</b><br>{p_texts[st.session_state.subnautica_project_year]}</div>', unsafe_allow_html=True)
+        # 🎯 AJOUT : On ré-injecte le style de la box HUD Subnautica pour qu'elle s'affiche correctement
+        box_style = """
+        <style>
+            .subnautica-box {
+                border: 2px solid #00daff;
+                border-radius: 4px;
+                padding: 15px 20px;
+                background-color: rgba(0, 218, 255, 0.03);
+                box-shadow: inset 0 0 15px rgba(0, 218, 255, 0.05), 0 0 10px rgba(0, 218, 255, 0.1);
+                color: #00daff;
+                font-family: 'Orbitron', sans-serif;
+                margin-top: 15px;
+            }
+        </style>
+        """
+        st.markdown(box_style, unsafe_allow_html=True)
+        
+        # Affichage de la box Subnautica avec son design complet
+        st.markdown(f'<div class="subnautica-box"><b>📁 ARCHIVE_{st.session_state.subnautica_project_year} : OBJECTIF DU STUDIO</b><br><br>• {p_texts[st.session_state.subnautica_project_year]}</div>', unsafe_allow_html=True)
         
     # 🍊 MODE CLASSIC (Orange)
     elif st.session_state.theme != "Subnautica_2":
