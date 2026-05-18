@@ -591,7 +591,8 @@ elif st.session_state.active_tab == "PROJETS":
             "2025": "Lancement des premières séries collaboratives unifiées entre membres.",
             "2026": "Ouverture de la boutique officielle Fr33zy Over Studio."
         }
-        st.markdown(f'<div class="subnautica-box"><b>OBJECTIF_{st.session_state.subnautica_project_year} :</b><br>{p_texts[st.session_state.subnautica_project_year]}</div>', unsafe_allow_html=True)
+        st.markdown(f'<div class="Subnautica_2-box"><b>OBJECTIF_{st.session_state.Subnautica_2_project_year} :</b><br>{p_texts[st.session_state.Subnautica_2_project_year]}</div>', unsafe_allow_html=True)
+        
     # 🎯 CORRECTION ICI : On utilise 'elif' au lieu de 'else' pour ne pas bloquer les onglets suivants
     elif st.session_state.theme != "Subnautica_2":
         dot_color = "#d37c2e"
