@@ -650,9 +650,9 @@ elif st.session_state.active_tab == "PROJETS":
                 '<div class="subnautica-box-base"><b>🗃️ LOGS_2027 : DIVERSIFICATION DES FORMATS</b><br><br><span style="color: #00daff; margin-right: 8px;">·</span> ⚔️ Multi-gaming intensif et création des premières séries coopératives.</div>',
                 unsafe_allow_html=True)
                 
-        elif st.session_state.Subnautica_2_project_year == "2026":
+elif st.session_state.Subnautica_2_project_year == "2024":
             st.markdown(
-                '<div class="subnautica-box-base"><b>🛰️ LOGS_2026 : DÉPLOIEMENT FR33ZY OVER STUDIO</b><br><br><span style="color: #00daff; margin-right: 8px;">·</span> 🌌 Lancement du Hub communautaire, l'expérience membre. C'est l'objectif actuel !, et refonte des serveurs.</div>',
+                """<div class="subnautica-box-base"><b>🛰️ LOGS_2026 : DÉPLOIEMENT FR33ZY OVER STUDIO</b><br><br><span style="color: #00daff; margin-right: 8px;">·</span> 🌌 Lancement du Hub communautaire, l'expérience membre. C'est l'objectif actuel !, et refonte des serveurs.</div>""",
                 unsafe_allow_html=True)
 
 # 🍊 MODE CLASSIC (Orange)
