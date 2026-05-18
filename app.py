@@ -579,7 +579,7 @@ elif st.session_state.active_tab == "PROJETS":
 
     # 🌊 MODE SUBNAUTICA (Cyan)
     if st.session_state.theme == "Subnautica_2":
-        # 🎯 SÉCURITÉ INITIALISATION : Évite le crash au démarrage du site
+        # 🎯 SÉCURITÉ INITIALISATION
         if "subnautica_project_year" not in st.session_state:
             st.session_state.subnautica_project_year = "2024"
 
@@ -588,7 +588,6 @@ elif st.session_state.active_tab == "PROJETS":
         
         for idx, (yr, label) in enumerate(proj_milestones):
             with cols_p[idx]:
-                # Le bouton met à jour la variable et force le rechargement immédiat
                 if st.button(label, key=f"proj_btn_{yr}", use_container_width=True):
                     st.session_state.subnautica_project_year = yr
                     st.rerun() 
@@ -600,32 +599,40 @@ elif st.session_state.active_tab == "PROJETS":
             "2026": "Ouverture de la boutique officielle Fr33zy Over Studio."
         }
         
-        # 🎯 AJOUT : On ré-injecte le style de la box HUD Subnautica pour qu'elle s'affiche correctement
+        # 🎯 LE STYLE EXACT DE TON VISUEL : Avec la grosse bordure à gauche (border-left)
         box_style = """
         <style>
-            .subnautica-box {
-                border: 2px solid #00daff;
+            .subnautica-box-final {
+                background-color: rgba(6, 14, 23, 0.85); /* Fond sombre PDA */
+                border: 1px solid rgba(0, 218, 255, 0.3); /* Bordure fine néon */
+                border-left: 4px solid #00daff; /* 🎯 Le fameux liseré épais brillant à gauche ! */
                 border-radius: 4px;
-                padding: 15px 20px;
-                background-color: rgba(0, 218, 255, 0.03);
-                box-shadow: inset 0 0 15px rgba(0, 218, 255, 0.05), 0 0 10px rgba(0, 218, 255, 0.1);
-                color: #00daff;
+                padding: 18px 24px;
+                box-shadow: 0 0 15px rgba(0, 218, 255, 0.1);
+                color: #ffffff;
                 font-family: 'Orbitron', sans-serif;
                 margin-top: 15px;
+            }
+            .subnautica-box-final b {
+                color: #00daff; /* Couleur Cyan pour le titre de l'archive */
             }
         </style>
         """
         st.markdown(box_style, unsafe_allow_html=True)
         
-        # Affichage de la box Subnautica avec son design complet
-        st.markdown(f'<div class="subnautica-box"><b>📁 ARCHIVE_{st.session_state.subnautica_project_year} : OBJECTIF DU STUDIO</b><br><br>• {p_texts[st.session_state.subnautica_project_year]}</div>', unsafe_allow_html=True)
+        # Affichage du bloc avec la structure identique à tes archives de parcours
+        st.markdown(f"""
+        <div class="subnautica-box-final">
+            <b>📁 ARCHIVE_{st.session_state.subnautica_project_year} : OBJECTIF DU STUDIO</b><br><br>
+            <span style="color: #00daff; margin-right: 5px;">•</span> {p_texts[st.session_state.subnautica_project_year]}
+        </div>
+        """, unsafe_allow_html=True)
         
     # 🍊 MODE CLASSIC (Orange)
     elif st.session_state.theme != "Subnautica_2":
         dot_color = "#d37c2e"
         html_v_timeline = f"""
         <style>
-            /* 🎯 Centrage parfait sur la page sans fond noir opaque */
             .tl-wrapper {{
                 display: flex;
                 justify-content: center;
