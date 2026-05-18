@@ -642,17 +642,17 @@ elif st.session_state.active_tab == "PROJETS":
         # Affichage conditionnel selon la base demandée
         if st.session_state.Subnautica_2_project_year == "2028":
             st.markdown(
-                '<div class="subnautica-box-base"><b>📁 LOGS_2028 : LES PREMIERS PROJETS VLOGS</b><br><br><span style="color: #00daff; margin-right: 8px;">·</span> 🎬 Lancement des premiers concepts originaux sur la plateforme.<br><span style="color: #00daff; margin-right: 8px;">·</span></div>',
+                '<div class="subnautica-box-base"><b>📁 LOGS_2028 : LES PREMIERS PROJETS VLOGS</b><br><br><span style="color: #00daff; margin-right: 8px;">·</span> 🎬 Lancement des premiers concepts originaux sur la plateforme.</div>',
                 unsafe_allow_html=True)
                 
         elif st.session_state.Subnautica_2_project_year == "2027":
             st.markdown(
-                '<div class="subnautica-box-base"><b>🗃️ LOGS_2027 : DIVERSIFICATION DES FORMATS</b><br><br><span style="color: #00daff; margin-right: 8px;">·</span> ⚔️ Multi-gaming intensif et création des premières séries coopératives.<br><span style="color: #00daff; margin-right: 8px;">·</span></div>',
+                '<div class="subnautica-box-base"><b>🗃️ LOGS_2027 : DIVERSIFICATION DES FORMATS</b><br><br><span style="color: #00daff; margin-right: 8px;">·</span> ⚔️ Multi-gaming intensif et création des premières séries coopératives.</div>',
                 unsafe_allow_html=True)
                 
         elif st.session_state.Subnautica_2_project_year == "2026":
             st.markdown(
-                '<div class="subnautica-box-base"><b>🛰️ LOGS_2026 : DÉPLOIEMENT FR33ZY OVER STUDIO</b><br><br><span style="color: #00daff; margin-right: 8px;">·</span> 🌌 Lancement du Hub communautaire, l'expérience membre. C'est l'objectif actuel !, et refonte des serveurs.<br><span style="color: #00daff; margin-right: 8px;">·</span></div>',
+                '<div class="subnautica-box-base"><b>🛰️ LOGS_2026 : DÉPLOIEMENT FR33ZY OVER STUDIO</b><br><br><span style="color: #00daff; margin-right: 8px;">·</span> 🌌 Lancement du Hub communautaire, l'expérience membre. C'est l'objectif actuel !, et refonte des serveurs.</div>',
                 unsafe_allow_html=True)
 
 # 🍊 MODE CLASSIC (Orange)
