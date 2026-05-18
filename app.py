@@ -295,14 +295,7 @@ if st.session_state.theme == "Subnautica_2":
     
     st.write("")
     
-    # 🎯 Dictionnaire contenant tes textes d'origine pour le mode Cyan
-    h_texts = {
-        "2012": "<b>📁 ARCHIVE_2012 : CRÉATION DE LA CHAÎNE</b><br><br><span style='color: #00daff; margin-right: 8px;'>·</span> 📺 Programmes d'époque : Le JT & Best-off, L'OverZone 90's.<br><span style='color: #00daff; margin-right: 8px;'>·</span> 🔮 Concepts historiques : Qui veut passer pour un inculte ?, Bureau des Plinthes.",
-        "2016": "<b>📁 ARCHIVE_2016 : L'ALLIANCE ET L'EXPANSION</b><br><br><span style='color: #00daff; margin-right: 8px;'>·</span> 👥 Arrivée de Xanna. Début du trio emblématique.<br><span style='color: #00daff; margin-right: 8px;'>·</span> 🎮 Expansion des formats et des projets multi-gaming.",
-        "2024": "<b>📁 ARCHIVE_2024 : FR33ZY OVER STUDIO MODERN V1</b><br><br><span style='color: #00daff; margin-right: 8px;'>·</span> 🚀 Refonte graphique intégrale et nouveau logo officiel.<br><span style='color: #00daff; margin-right: 8px;'>·</span> Modernisation globale des outils et de l'infrastructure."
-    }
-    
-    # Le style de base d'origine de la box (Bordure fine cyan, fond transparent)
+    # Style des box Subnautica_2 (Bordure fine complète, fond transparent)
     box_style_home = """
     <style>
         .subnautica-box-base {
@@ -323,10 +316,23 @@ if st.session_state.theme == "Subnautica_2":
     """
     st.markdown(box_style_home, unsafe_allow_html=True)
     
-    # Affichage de la box correspondante à l'année cliquée
-    st.markdown(f'<div class="subnautica-box-base">{h_texts[st.session_state.Subnautica_2_story_year]}</div>', unsafe_allow_html=True)
+    # Affichage de la bonne boîte d'archive selon l'année sélectionnée
+    if st.session_state.Subnautica_2_story_year == "2012":
+        st.markdown(
+            '<div class="subnautica-box-base"><b>📁 ARCHIVE_2012 : CRÉATION DE LA CHAÎNE</b><br><br><span style="color: #00daff; margin-right: 8px;">·</span> 📺 Programmes d\'époque : Le JT & Best-off, L\'OverZone 90\'s.<br><span style="color: #00daff; margin-right: 8px;">·</span> 🔮 Concepts historiques : Qui veut passer pour un inculte ?, Bureau des Plinthes.</div>',
+            unsafe_allow_html=True)
+            
+    elif st.session_state.Subnautica_2_story_year == "2016":
+        st.markdown(
+            '<div class="subnautica-box-base"><b>📁 ARCHIVE_2016 : L\'ALLIANCE ET L\'EXPANSION</b><br><br><span style="color: #00daff; margin-right: 8px;">·</span> 👥 Arrivée de Xanna. Début du trio emblématique.<br><span style="color: #00daff; margin-right: 8px;">·</span> 🎮 Expansion des formats et des projets multi-gaming.</div>',
+            unsafe_allow_html=True)
+            
+    elif st.session_state.Subnautica_2_story_year == "2024":
+        st.markdown(
+            '<div class="subnautica-box-base"><b>📁 ARCHIVE_2024 : FR33ZY OVER STUDIO MODERN V1</b><br><br><span style="color: #00daff; margin-right: 8px;">·</span> 🚀 Refonte graphique intégrale et nouveau logo officiel.<br><span style="color: #00daff; margin-right: 8px;">·</span> Modernisation globale des outils et de l\'infrastructure.</div>',
+            unsafe_allow_html=True)
 
-# 🍊 MODE CLASSIC (Orange)
+# 🍊 MODE CLASSIC (Orange) -> Placé en dernier pour fermer correctement le bloc de conditions
 else:
     dot_color = "#d37c2e"
     dot_hover_color = "#ff8c2e"
