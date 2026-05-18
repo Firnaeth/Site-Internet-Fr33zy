@@ -642,33 +642,29 @@ elif st.session_state.active_tab == "PROJETS":
         # Affichage conditionnel selon la base demandée
         if st.session_state.Subnautica_2_project_year == "2028":
             st.markdown(
-                '<div class="subnautica-box-base"><b>📁 LOGS_2028 : LES PREMIERS PROJETS VLOGS</b><br><br><span style="color: #00daff; margin-right: 8px;">·</span> 🎬 Lancement des premiers concepts originaux sur la plateforme.</div>',
+                """<div class="subnautica-box-base"><b>📁 LOGS_2028 : LES PREMIERS PROJETS VLOGS</b><br><br><span style="color: #00daff; margin-right: 8px;">·</span> 🎬 Lancement des premiers concepts originaux sur la plateforme.</div>""",
                 unsafe_allow_html=True)
                 
         elif st.session_state.Subnautica_2_project_year == "2027":
             st.markdown(
-                '<div class="subnautica-box-base"><b>🗃️ LOGS_2027 : DIVERSIFICATION DES FORMATS</b><br><br><span style="color: #00daff; margin-right: 8px;">·</span> ⚔️ Multi-gaming intensif et création des premières séries coopératives.</div>',
+                """<div class="subnautica-box-base"><b>🗃️ LOGS_2027 : DIVERSIFICATION DES FORMATS</b><br><br><span style="color: #00daff; margin-right: 8px;">·</span> ⚔️ Multi-gaming intensif et création des premières séries coopératives.</div>""",
                 unsafe_allow_html=True)
                 
-# (Fin de ton bloc if Subnautica_2_project_year == "2024" juste au-dessus)
-        elif st.session_state.Subnautica_2_project_year == "2024":
+        elif st.session_state.Subnautica_2_project_year == "2026":
             st.markdown(
                 """<div class="subnautica-box-base"><b>🛰️ LOGS_2026 : DÉPLOIEMENT FR33ZY OVER STUDIO</b><br><br><span style="color: #00daff; margin-right: 8px;">·</span> 🌌 Lancement du Hub communautaire, l'expérience membre. C'est l'objectif actuel !, et refonte des serveurs.</div>""",
                 unsafe_allow_html=True)
 
-    # 🍊 MODE CLASSIC (Orange) -> Aligné pile poil sous le "if st.session_state.theme ==..."
+    # 🍊 MODE CLASSIC (Orange)
     else:
-        st.markdown("""
         dot_color = "#d37c2e"
         html_v_timeline = f"""
         <style>
-            /* Modification : Centrage sur la page */
             .tl-wrapper {{
                 display: flex;
                 justify-content: center;
                 width: 100%;
             }}
-            /* Modification : background passé en transparent */
             .tl-v-cont {{ 
                 position: relative; 
                 padding: 20px 40px; 
@@ -685,21 +681,20 @@ elif st.session_state.active_tab == "PROJETS":
         </style>
         <div class="tl-wrapper">
             <div class="tl-v-cont"><div class="tl-v-line"></div>
-                <div class="tl-v-node"><div class="tl-v-dot"></div><div class="tl-v-year">2026</div><div class="tl-v-desc"><b>SITE WEB V1 :</b>Lancement du Hub communautaire, du shop et de l'expérience membre. C'est l'objectif actuel !</div></div>
-                <div class="tl-v-node"><div class="tl-v-dot"></div><div class="tl-v-year">2024</div><div class="tl-v-desc"><b>TRANSITION :</b>Over_1 vers Fr33zy Over Studio pour une identité plus forte.</div></div>
+                <div class="tl-v-node"><div class="tl-v-dot"></div><div class="tl-v-year">2026</div><div class="tl-v-desc"><b>SITE WEB V1 :</b> Lancement du Hub communautaire, du shop et de l'expérience membre. C'est l'objectif actuel !</div></div>
+                <div class="tl-v-node"><div class="tl-v-dot"></div><div class="tl-v-year">2024</div><div class="tl-v-desc"><b>TRANSITION :</b> Over_1 vers Fr33zy Over Studio pour une identité plus forte.</div></div>
                 <div class="tl-v-node"><div class="tl-v-dot"></div><div class="tl-v-year">2024</div><div class="tl-v-desc"><b>SHOP :</b> Ouverture de la boutique Merch officielle.</div></div>
             </div>
         </div>
         """
-        components.html(html_v_timeline, height=350)
+        st.components.v1.html(html_v_timeline, height=350)
 
-        st.markdown(f"""
+        st.markdown("""
         <div class="orange-card-classic">
             <div class="orange-title-classic">PROJETS DU STUDIO (MODE CLASSIC)</div>
             <div class="orange-text-classic">Retrouvez l'ensemble de nos archives de productions, séries de Let's Play et événements communautaires classés par année.</div>
         </div>
         """, unsafe_allow_html=True)
-
 
 # --- 👥 ONGLET L'ÉQUIPE ---
 elif st.session_state.active_tab == "L'ÉQUIPE":
