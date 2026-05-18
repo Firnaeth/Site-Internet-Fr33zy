@@ -280,24 +280,29 @@ if st.session_state.active_tab == "QUI SOMMES-NOUS":
 
 # 🌊 MODE SUBNAUTICA (Cyan)
     if st.session_state.theme == "Subnautica_2":
-        story_cols = st.columns(3)
-        years = ["2012", "2016", "2024"]
-        labels = ["🚀 ORIGINES (2012)", "👥 L'ALLIANCE (2016)", "⚓ NOUVELLE ÈRE (2024)"]
+        # 🎯 SÉCURITÉ INITIALISATION : Crée la variable si elle n'existe pas
+        if "Subnautica_2_story_year" not in st.session_state:
+            st.session_state.Subnautica_2_story_year = "2012"
+
+        cols_h = st.columns(3)
+        home_milestones = [("2012", "🚀 ORIGINES (2012)"), ("2016", "👥 L'ALLIANCE (2016)"), ("2024", "⚓ NOUVELLE ÈRE (2024)")]
         
         for idx, (yr, label) in enumerate(home_milestones):
             with cols_h[idx]:
                 if st.button(label, key=f"home_btn_{yr}", use_container_width=True):
-                    st.session_state.subnautica_home_year = yr
+                    st.session_state.Subnautica_2_story_year = yr
                     st.rerun()
         
         st.write("")
+        
+        # 🎯 Dictionnaire contenant tes textes d'origine pour l'accueil
         h_texts = {
-            "2012": "Programmes d'époque : Le JT & Best-off, L'OverZone 90's.<br><span style='color: #00daff; margin-right: 8px;'>·</span> Concepts historiques : Qui veut passer pour un inculte ?, Bureau des Plinthes.",
-            "2016": "Structuration de l'équipe et début des projets multi-gaming réguliers.<br><span style='color: #00daff; margin-right: 8px;'>·</span> Ouverture des premiers serveurs communautaires dédiés.",
-            "2024": "Transition officielle vers l'identité visuelle et technique Fr33zy Over Studio.<br><span style='color: #00daff; margin-right: 8px;'>·</span> Modernisation globale des outils et refonte complète de l'infrastructure."
+            "2012": "<b>📁 ARCHIVE_2012 : CRÉATION DE LA CHAÎNE</b><br><br><span style='color: #00daff; margin-right: 8px;'>·</span> 📺 Programmes d'époque : Le JT & Best-off, L'OverZone 90's.<br><span style='color: #00daff; margin-right: 8px;'>·</span> 🔮 Concepts historiques : Qui veut passer pour un inculte ?, Bureau des Plinthes.",
+            "2016": "<b>📁 ARCHIVE_2016 : L'ALLIANCE ET L'EXPANSION</b><br><br><span style='color: #00daff; margin-right: 8px;'>·</span> Structuration de l'équipe et début des projets multi-gaming réguliers.<br><span style='color: #00daff; margin-right: 8px;'>·</span> Ouverture des premiers serveurs communautaires dédiés.",
+            "2024": "<b>📁 ARCHIVE_2024 : LA NOUVELLE ÈRE</b><br><br><span style='color: #00daff; margin-right: 8px;'>·</span> Transition officielle vers l'identité visuelle et technique Fr33zy Over Studio.<br><span style='color: #00daff; margin-right: 8px;'>·</span> Modernisation globale des outils et refonte complète de l'infrastructure."
         }
         
-        # Le style d'origine de la box (Bordure fine, fond transparent)
+        # Le style de base d'origine de la box (Bordure fine cyan, fond transparent)
         box_style_home = """
         <style>
             .subnautica-box-base {
@@ -317,6 +322,9 @@ if st.session_state.active_tab == "QUI SOMMES-NOUS":
         </style>
         """
         st.markdown(box_style_home, unsafe_allow_html=True)
+        
+        # Affichage propre basé sur la variable d'année de ton parcours
+        st.markdown(f'<div class="subnautica-box-base">{h_texts[st.session_state.Subnautica_2_story_year]}</div>', unsafe_allow_html=True)
         
         # Affichage sans bug avec le bon dictionnaire p_texts ou h_texts
         st.markdown(f"""
