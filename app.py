@@ -436,7 +436,7 @@ else:
         st.link_button("S'ABONNER SUR YOUTUBE", "https://www.youtube.com/@Fr33zyOverStudio", use_container_width=True)
 
 # --- 👥 ONGLET L'ÉQUIPE ---
-elif st.session_state.active_tab == "L'ÉQUIPE":
+else st.session_state.active_tab == "L'ÉQUIPE":
 
     # SI UN PROFIL INDIVIDUEL EST SÉLECTIONNÉ
     if st.session_state.current_profile:
