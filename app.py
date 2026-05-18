@@ -599,22 +599,22 @@ elif st.session_state.active_tab == "PROJETS":
             "2026": "Ouverture de la boutique officielle Fr33zy Over Studio."
         }
         
-        # 🎯 LE STYLE EXACT DE TON VISUEL : Avec la grosse bordure à gauche (border-left)
+# 🎯 CORRECTION : background-color passe en transparent et on adoucit l'ombre interne
         box_style = """
         <style>
             .subnautica-box-final {
-                background-color: rgba(6, 14, 23, 0.85); /* Fond sombre PDA */
-                border: 1px solid rgba(0, 218, 255, 0.3); /* Bordure fine néon */
-                border-left: 4px solid #00daff; /* 🎯 Le fameux liseré épais brillant à gauche ! */
+                background-color: transparent; /* 🌌 Plus aucun fond noir, transparence totale ! */
+                border: 1px solid rgba(0, 218, 255, 0.2); 
+                border-left: 4px solid #00daff; 
                 border-radius: 4px;
                 padding: 18px 24px;
-                box-shadow: 0 0 15px rgba(0, 218, 255, 0.1);
+                box-shadow: 0 0 15px rgba(0, 218, 255, 0.05);
                 color: #ffffff;
                 font-family: 'Orbitron', sans-serif;
                 margin-top: 15px;
             }
             .subnautica-box-final b {
-                color: #00daff; /* Couleur Cyan pour le titre de l'archive */
+                color: #00daff;
             }
         </style>
         """
