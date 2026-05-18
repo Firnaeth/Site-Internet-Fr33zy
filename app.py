@@ -578,12 +578,20 @@ elif st.session_state.active_tab == "PROJETS":
     st.markdown(f'### 📂 NOS PROJETS & VISION')
 
     if st.session_state.theme == "Subnautica_2":
+if st.session_state.theme == NOM_THEME_CYAN:
+        # 🎯 SÉCURITÉ : Si la variable n'existe pas au démarrage, on lui donne "2024" par défaut
+        if "subnautica_project_year" not in st.session_state:
+            st.session_state.subnautica_project_year = "2024"
+
         cols_p = st.columns(3)
         proj_milestones = [("2024", "🌐 SITE V1"), ("2025", "🎬 CROSSOVER"), ("2026", "🛒 SHOP")]
+        
         for idx, (yr, label) in enumerate(proj_milestones):
             with cols_p[idx]:
+                # On utilise le clic pour mettre à jour la session_state et on force le rerun pour appliquer le changement
                 if st.button(label, key=f"proj_btn_{yr}", use_container_width=True):
                     st.session_state.subnautica_project_year = yr
+                    st.rerun() # 🚀 Force Streamlit à rafraîchir l'affichage du texte immédiatement !
         
         st.write("")
         p_texts = {
@@ -591,7 +599,9 @@ elif st.session_state.active_tab == "PROJETS":
             "2025": "Lancement des premières séries collaboratives unifiées entre membres.",
             "2026": "Ouverture de la boutique officielle Fr33zy Over Studio."
         }
-        st.markdown(f'<div class="Subnautica_2-box"><b>OBJECTIF_{st.session_state.Subnautica_2_project_year} :</b><br>{p_texts[st.session_state.Subnautica_2_project_year]}</div>', unsafe_allow_html=True)
+        
+        # Affichage de la box Subnautica
+        st.markdown(f'<div class="subnautica-box"><b>OBJECTIF_{st.session_state.subnautica_project_year} :</b><br>{p_texts[st.session_state.subnautica_project_year]}</div>', unsafe_allow_html=True)
         
     # 🎯 CORRECTION ICI : On utilise 'elif' au lieu de 'else' pour ne pas bloquer les onglets suivants
     elif st.session_state.theme != "Subnautica_2":
