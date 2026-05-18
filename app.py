@@ -597,14 +597,15 @@ elif st.session_state.active_tab == "PROJETS":
             unsafe_allow_html=True)
 
     # --- MODE ORANGE : FRISE VERTICALE ---
-else:
+# 🎯 CORRECTION ICI : On utilise 'elif' au lieu de 'else' pour ne pas bloquer les onglets suivants
+    elif st.session_state.theme != NOM_THEME_CYAN:
         dot_color = "#d37c2e"
         html_v_timeline = f"""
         <style>
             .tl-v-cont {{ 
                 position: relative; 
                 padding: 20px 40px; 
-                background: transparent; /* 🎯 REND LE FOND COMPLÈTEMENT INVISIBLE */
+                background: transparent; 
                 font-family: sans-serif; 
             }}
             .tl-v-line {{ position: absolute; top: 10px; bottom: 10px; left: 46px; width: 2px; background: #242c34; }}
@@ -615,10 +616,9 @@ else:
         </style>
         <div class="tl-v-cont"><div class="tl-v-line"></div>
             <div class="tl-v-node"><div class="tl-v-dot"></div><div class="tl-v-year">2026</div><div class="tl-v-desc"><b>SITE WEB V1 :</b> Lancement du Hub communautaire, du shop et de l'expérience membre. C'est l'objectif actuel !</div></div>
-            <div class="tl-v-node"><div class="tl-v-dot"></div><div class="tl-v-year">2024</div><div class="tl-v-desc"><b>TRANSITION :</b> Over_1 vers Fr33zy Over Studio pour une identité plus forte.</div></div>
+            <div class="tl-v-node"><div class="tl-v-dot"></div><div class="tl-v-year">2024</div><div class="tl-v-desc"><b>TRANSITION :</b> Over_1 vers Fr33zy Over Studio pour une identity plus forte.</div></div>
         </div>
         """
-        # On ajoute scrupuleusement les textes de ton visuel et on affiche sans fond opaque
         components.html(html_v_timeline, height=250)
 
 # --- 👥 ONGLET L'ÉQUIPE ---
