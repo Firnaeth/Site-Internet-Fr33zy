@@ -599,32 +599,32 @@ elif st.session_state.active_tab == "PROJETS":
             "2026": "Ouverture de la boutique officielle Fr33zy Over Studio."
         }
         
-# 🎯 CORRECTION : background-color passe en transparent et on adoucit l'ombre interne
+        # 🎯 LE STYLE DE BASE RETROUVÉ : Fine bordure complète, fond transparent, pas de liseré gauche
         box_style = """
         <style>
-            .subnautica-box-final {
-                background-color: transparent; /* 🌌 Plus aucun fond noir, transparence totale ! */
-                border: 1px solid rgba(0, 218, 255, 0.2); 
-                border-left: 4px solid #00daff; 
+            .subnautica-box-base {
+                border: 1px solid #00daff; /* Fine bordure cyan sur les 4 côtés */
                 border-radius: 4px;
-                padding: 18px 24px;
-                box-shadow: 0 0 15px rgba(0, 218, 255, 0.05);
+                padding: 15px 20px;
+                background-color: transparent; /* Transparence complète comme à l'accueil */
+                box-shadow: inset 0 0 10px rgba(0, 218, 255, 0.05), 0 0 8px rgba(0, 218, 255, 0.1);
                 color: #ffffff;
                 font-family: 'Orbitron', sans-serif;
                 margin-top: 15px;
+                line-height: 1.6;
             }
-            .subnautica-box-final b {
+            .subnautica-box-base b {
                 color: #00daff;
             }
         </style>
         """
         st.markdown(box_style, unsafe_allow_html=True)
         
-        # Affichage du bloc avec la structure identique à tes archives de parcours
+        # Affichage conforme au design d'origine avec le point de liste
         st.markdown(f"""
-        <div class="subnautica-box-final">
+        <div class="subnautica-box-base">
             <b>📁 ARCHIVE_{st.session_state.subnautica_project_year} : OBJECTIF DU STUDIO</b><br><br>
-            <span style="color: #00daff; margin-right: 5px;">•</span> {p_texts[st.session_state.subnautica_project_year]}
+            <span style="color: #00daff; margin-right: 8px;">·</span> {p_texts[st.session_state.subnautica_project_year]}
         </div>
         """, unsafe_allow_html=True)
         
@@ -670,7 +670,6 @@ elif st.session_state.active_tab == "PROJETS":
         </div>
         """
         components.html(html_v_timeline, height=250)
-
 # --- 👥 ONGLET L'ÉQUIPE ---
 elif st.session_state.active_tab == "L'ÉQUIPE":
     if st.session_state.current_profile:
