@@ -280,8 +280,9 @@ if st.session_state.active_tab == "QUI SOMMES-NOUS":
 
 # 🌊 MODE SUBNAUTICA (Cyan)
     if st.session_state.theme == "Subnautica_2":
-        cols_h = st.columns(3)
-        home_milestones = [("2012", "🚀 ORIGINES (2012)"), ("2016", "👥 L'ALLIANCE (2016)"), ("2024", "⚓ NOUVELLE ÈRE (2024)")]
+        story_cols = st.columns(3)
+        years = ["2012", "2016", "2024"]
+        labels = ["🚀 ORIGINES (2012)", "👥 L'ALLIANCE (2016)", "⚓ NOUVELLE ÈRE (2024)"]
         
         for idx, (yr, label) in enumerate(home_milestones):
             with cols_h[idx]:
