@@ -332,11 +332,23 @@ if st.session_state.active_tab == "QUI SOMMES-NOUS":
                 '<div class="subnautica-box-base"><b>📁 ARCHIVE_2024 : FR33ZY OVER STUDIO MODERN V1</b><br><br><span style="color: #00daff; margin-right: 8px;">·</span> 🚀 Refonte graphique intégrale et nouveau logo officiel.<br><span style="color: #00daff; margin-right: 8px;">·</span> Modernisation globale des outils et de l\'infrastructure.</div>',
                 unsafe_allow_html=True)
 
-    # 🍊 MODE CLASSIC (Orange) -> Placé en dernier du bloc de conditions du thème
+    # 🍊 MODE CLASSIC (Orange)
     else:
         dot_color = "#d37c2e"
-        dot_hover_color = "#ff8c2e"
-
+        html_v_timeline = f"""
+        <style>
+            .tl-wrapper {{
+                display: flex;
+                justify-content: center;
+                width: 100%;
+            }}
+            .tl-v-cont {{ 
+                position: relative; 
+                padding: 20px 40px; 
+                background: transparent; 
+                font-family: 'Orbitron'; 
+                width: 100%;
+                max-width: 600px;
         html_timeline_fixed_popups = f"""
         <style>
             .timeline-container {{ font-family: 'Orbitron', sans-serif; color: white; background: #0b0f14; padding: 20px 15px; border-radius: 6px; }}
