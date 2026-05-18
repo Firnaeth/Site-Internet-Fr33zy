@@ -572,77 +572,48 @@ elif st.session_state.active_tab == "L'ÉQUIPE":
                         st.rerun()
 
 # =========================================================================
-# 📁 ONGLET : PROJETS
+# 📁 ONGLET : PROJETS (ADAPTATION DEMANDÉE)
 # =========================================================================
 elif st.session_state.active_tab == "PROJETS":
-    st.markdown(f'### 📂 NOS PROJETS & VISION')
+    accent_color = "#00d2ff" if st.session_state.theme == "Subnautica_2" else "#d37c2e"
+    st.markdown(f'### 📂 PROJETS & VISION')
 
-    # 🌊 MODE SUBNAUTICA (Cyan)
+    # --- MODE Subnautica_2 : BOUTONS PDA ---
     if st.session_state.theme == "Subnautica_2":
-        # 🎯 SÉCURITÉ INITIALISATION
-        if "subnautica_project_year" not in st.session_state:
-            st.session_state.subnautica_project_year = "2024"
-
         cols_p = st.columns(3)
-        proj_milestones = [("2024", "🌐 SITE V1"), ("2025", "🎬 CROSSOVER"), ("2026", "🛒 SHOP")]
-        
+        proj_milestones = [("2026", "🌐 SITE V1"), ("2024", "🎬 TRANSITION"), ("2025", "🛒 SHOP")]
         for idx, (yr, label) in enumerate(proj_milestones):
             with cols_p[idx]:
                 if st.button(label, key=f"proj_btn_{yr}", use_container_width=True):
-                    st.session_state.subnautica_project_year = yr
-                    st.rerun() 
-        
+                    st.session_state.Subnautica_2_project_year = yr
+
         st.write("")
         p_texts = {
-            "2024": "Déploiement du PDA interactif Streamlit pour centraliser l'équipe.",
-            "2025": "Lancement des premières séries collaboratives unifiées entre membres.",
-            "2026": "Ouverture de la boutique officielle Fr33zy Over Studio."
+            "2026": "Lancement du Hub communautaire, du shop et de l'expérience membre. C'est l'objectif actuel !",
+            "2024": "Transition vers Fr33zy Over Studio pour une identité plus forte.",
+            "2025": "Ouverture de la boutique officielle Fr33zy Over Studio."
         }
-        
-        # 🎯 LE STYLE DE BASE RETROUVÉ : Fine bordure complète, fond transparent, pas de liseré gauche
-        box_style = """
-        <style>
-            .subnautica-box-base {
-                border: 1px solid #00daff; /* Fine bordure cyan sur les 4 côtés */
-                border-radius: 4px;
-                padding: 15px 20px;
-                background-color: transparent; /* Transparence complète comme à l'accueil */
-                box-shadow: inset 0 0 10px rgba(0, 218, 255, 0.05), 0 0 8px rgba(0, 218, 255, 0.1);
-                color: #ffffff;
-                font-family: 'Orbitron', sans-serif;
-                margin-top: 15px;
-                line-height: 1.6;
-            }
-            .subnautica-box-base b {
-                color: #00daff;
-            }
-        </style>
-        """
-        st.markdown(box_style, unsafe_allow_html=True)
-        
-        # Affichage conforme au design d'origine avec le point de liste
-        st.markdown(f"""
-        <div class="subnautica-box-base">
-            <b>📁 ARCHIVE_{st.session_state.subnautica_project_year} : OBJECTIF DU STUDIO</b><br><br>
-            <span style="color: #00daff; margin-right: 8px;">·</span> {p_texts[st.session_state.subnautica_project_year]}
-        </div>
-        """, unsafe_allow_html=True)
-        
-    # 🍊 MODE CLASSIC (Orange)
-    elif st.session_state.theme != "Subnautica_2":
+        st.markdown(
+            f'<div class="Subnautica_2-box"><b>OBJECTIF_{st.session_state.Subnautica_2_project_year} :</b><br>{p_texts[st.session_state.Subnautica_2_project_year]}</div>',
+            unsafe_allow_html=True)
+
+    # --- MODE ORANGE : FRISE VERTICALE ---
+    else:
         dot_color = "#d37c2e"
         html_v_timeline = f"""
         <style>
+            /* Modification : Centrage sur la page */
             .tl-wrapper {{
                 display: flex;
                 justify-content: center;
                 width: 100%;
             }}
+            /* Modification : background passé en transparent */
             .tl-v-cont {{ 
                 position: relative; 
                 padding: 20px 40px; 
                 background: transparent; 
-                font-family: sans-serif; 
+                font-family: 'Orbitron'; 
                 width: 100%;
                 max-width: 600px;
             }}
@@ -650,26 +621,17 @@ elif st.session_state.active_tab == "PROJETS":
             .tl-v-node {{ position: relative; padding-left: 40px; margin-bottom: 40px; }}
             .tl-v-dot {{ position: absolute; left: 0; top: 4px; width: 14px; height: 14px; background: {dot_color}; border-radius: 50%; box-shadow: 0 0 10px {dot_color}; z-index: 2; }}
             .tl-v-year {{ color: {dot_color}; font-weight: bold; margin-bottom: 5px; font-size: 1rem; }}
-            .tl-v-desc {{ color: #cbd5e1; font-family: sans-serif; font-size: 0.9rem; line-height: 1.4; }}
+            .tl-v-desc {{ color: #cbd5e1; font-family: sans-serif; font-size: 0.9rem; line-height: 1.4; max-width: 500px; }}
         </style>
-        
         <div class="tl-wrapper">
-            <div class="tl-v-cont">
-                <div class="tl-v-line"></div>
-                <div class="tl-v-node">
-                    <div class="tl-v-dot"></div>
-                    <div class="tl-v-year">2026</div>
-                    <div class="tl-v-desc"><b>SITE WEB V1 :</b> Lancement du Hub communautaire, du shop et de l'expérience membre. C'est l'objectif actuel !</div>
-                </div>
-                <div class="tl-v-node">
-                    <div class="tl-v-dot"></div>
-                    <div class="tl-v-year">2024</div>
-                    <div class="tl-v-desc"><b>TRANSITION :</b> Over_1 vers Fr33zy Over Studio pour une identité plus forte.</div>
-                </div>
+            <div class="tl-v-cont"><div class="tl-v-line"></div>
+                <div class="tl-v-node"><div class="tl-v-dot"></div><div class="tl-v-year">2026</div><div class="tl-v-desc"><b>SITE WEB V1 :</b>Lancement du Hub communautaire, du shop et de l'expérience membre. C'est l'objectif actuel !</div></div>
+                <div class="tl-v-node"><div class="tl-v-dot"></div><div class="tl-v-year">2024</div><div class="tl-v-desc"><b>TRANSITION :</b>Over_1 vers Fr33zy Over Studio pour une identité plus forte.</div></div>
+                <div class="tl-v-node"><div class="tl-v-dot"></div><div class="tl-v-year">2024</div><div class="tl-v-desc"><b>SHOP :</b> Ouverture de la boutique Merch officielle.</div></div>
             </div>
         </div>
         """
-        components.html(html_v_timeline, height=250)
+        components.html(html_v_timeline, height=350)
 # --- 👥 ONGLET L'ÉQUIPE ---
 elif st.session_state.active_tab == "L'ÉQUIPE":
     if st.session_state.current_profile:
