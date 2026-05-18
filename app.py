@@ -595,24 +595,44 @@ elif st.session_state.active_tab == "PROJETS":
 
     # 🎯 CORRECTION ICI : On utilise 'elif' au lieu de 'else' pour ne pas bloquer les onglets suivants
     elif st.session_state.theme != "Subnautica_2":
-        dot_color = "#d37c2e"
+dot_color = "#d37c2e"
         html_v_timeline = f"""
         <style>
+            /* 🎯 Conteneur principal centré sur la page */
+            .tl-wrapper {{
+                display: flex;
+                justify-content: center;
+                width: 100%;
+            }}
             .tl-v-cont {{ 
                 position: relative; 
                 padding: 20px 40px; 
                 background: transparent; 
                 font-family: sans-serif; 
+                width: 100%;
+                max-width: 600px; /* Aligne proprement le bloc au centre sans l'étirer à l'infini */
             }}
             .tl-v-line {{ position: absolute; top: 10px; bottom: 10px; left: 46px; width: 2px; background: #242c34; }}
             .tl-v-node {{ position: relative; padding-left: 40px; margin-bottom: 40px; }}
             .tl-v-dot {{ position: absolute; left: 0; top: 4px; width: 14px; height: 14px; background: {dot_color}; border-radius: 50%; box-shadow: 0 0 10px {dot_color}; z-index: 2; }}
             .tl-v-year {{ color: {dot_color}; font-weight: bold; margin-bottom: 5px; font-size: 1rem; }}
-            .tl-v-desc {{ color: #cbd5e1; font-family: sans-serif; font-size: 0.9rem; line-height: 1.4; max-width: 500px; }}
+            .tl-v-desc {{ color: #cbd5e1; font-family: sans-serif; font-size: 0.9rem; line-height: 1.4; }}
         </style>
-        <div class="tl-v-cont"><div class="tl-v-line"></div>
-            <div class="tl-v-node"><div class="tl-v-dot"></div><div class="tl-v-year">2026</div><div class="tl-v-desc"><b>SITE WEB V1 :</b> Lancement du Hub communautaire, du shop et de l'expérience membre. C'est l'objectif actuel !</div></div>
-            <div class="tl-v-node"><div class="tl-v-dot"></div><div class="tl-v-year">2024</div><div class="tl-v-desc"><b>TRANSITION :</b> Over_1 vers Fr33zy Over Studio pour une identity plus forte.</div></div>
+        
+        <div class="tl-wrapper">
+            <div class="tl-v-cont">
+                <div class="tl-v-line"></div>
+                <div class="tl-v-node">
+                    <div class="tl-v-dot"></div>
+                    <div class="tl-v-year">2026</div>
+                    <div class="tl-v-desc"><b>SITE WEB V1 :</b> Lancement du Hub communautaire, du shop et de l'expérience membre. C'est l'objectif actuel !</div>
+                </div>
+                <div class="tl-v-node">
+                    <div class="tl-v-dot"></div>
+                    <div class="tl-v-year">2024</div>
+                    <div class="tl-v-desc"><b>TRANSITION :</b> Over_1 vers Fr33zy Over Studio pour une identité plus forte.</div>
+                </div>
+            </div>
         </div>
         """
         components.html(html_v_timeline, height=250)
