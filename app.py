@@ -280,10 +280,6 @@ if st.session_state.active_tab == "QUI SOMMES-NOUS":
 
 # 🌊 MODE SUBNAUTICA (Cyan)
     if st.session_state.theme == "Subnautica_2":
-        # 🎯 SÉCURITÉ INITIALISATION
-        if "subnautica_home_year" not in st.session_state:
-            st.session_state.subnautica_home_year = "2012"
-
         cols_h = st.columns(3)
         home_milestones = [("2012", "🚀 ORIGINES (2012)"), ("2016", "👥 L'ALLIANCE (2016)"), ("2024", "⚓ NOUVELLE ÈRE (2024)")]
         
