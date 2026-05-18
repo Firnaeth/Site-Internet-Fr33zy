@@ -608,7 +608,7 @@ elif st.session_state.active_tab == "PROJETS":
 
         # Boutons HUD pour basculer entre les années de projets
         cols_p = st.columns(3)
-        project_milestones = [("2012", "📁 LOGS ANCIENS (2012)"), ("2016", "🗃️ ARCHIVES SÉRIES (2016)"), ("2024", "🛰️ INFRASTRUCTURE (2024)")]
+        project_milestones = [("2027", "🗃️ LA SUITE (2027)"), ("2024", "🛰️ INFRASTRUCTURE (2026)")]
         
         for idx, (yr, label) in enumerate(project_milestones):
             with cols_p[idx]:
@@ -640,19 +640,9 @@ elif st.session_state.active_tab == "PROJETS":
         st.markdown(box_style_proj, unsafe_allow_html=True)
         
         # Affichage conditionnel selon la base demandée
-        if st.session_state.Subnautica_2_project_year == "2012":
+        if st.session_state.Subnautica_2_project_year == "2024":
             st.markdown(
-                '<div class="subnautica-box-base"><b>📁 LOGS_2012 : LES PREMIERS PROJETS VLOGS</b><br><br><span style="color: #00daff; margin-right: 8px;">·</span> 🎬 Lancement des premiers concepts originaux sur la plateforme.<br><span style="color: #00daff; margin-right: 8px;">·</span> 🕹️ balbutiements techniques et captures d\'époque rétros.</div>',
-                unsafe_allow_html=True)
-                
-        elif st.session_state.Subnautica_2_project_year == "2016":
-            st.markdown(
-                '<div class="subnautica-box-base"><b>🗃️ LOGS_2016 : DIVERSIFICATION DES FORMATS</b><br><br><span style="color: #00daff; margin-right: 8px;">·</span> ⚔️ Multi-gaming intensif et création des premières séries coopératives.<br><span style="color: #00daff; margin-right: 8px;">·</span> 📈 Structuration des playlists et montages dynamiques.</div>',
-                unsafe_allow_html=True)
-                
-        elif st.session_state.Subnautica_2_project_year == "2024":
-            st.markdown(
-                '<div class="subnautica-box-base"><b>🛰️ LOGS_2024 : DÉPLOIEMENT FR33ZY OVER STUDIO</b><br><br><span style="color: #00daff; margin-right: 8px;">·</span> 🌌 Intégration de la charte Subnautica 2 et refonte des serveurs communautaires.<br><span style="color: #00daff; margin-right: 8px;">·</span> 🛠️ Alignement des configurations OBS Studio, DaVinci Resolve et Streamlit HUD.</div>',
+                '<div class="subnautica-box-base"><b>🛰️ LOGS_2026 : DÉPLOIEMENT FR33ZY OVER STUDIO</b><br><br><span style="color: #00daff; margin-right: 8px;">·</span> 🌌 Lancement du Hub communautaire, du shop et de l'expérience membre. C'est l'objectif actuel !.</div>',
                 unsafe_allow_html=True)
 
 # 🍊 MODE CLASSIC (Orange)
