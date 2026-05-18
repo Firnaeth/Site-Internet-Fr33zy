@@ -295,11 +295,11 @@ if st.session_state.theme == "Subnautica_2":
     
     st.write("")
     
-    # 🎯 Dictionnaire contenant tes textes d'origine pour l'accueil
+    # 🎯 Dictionnaire contenant tes textes d'origine nettoyés et mis à jour
     h_texts = {
         "2012": "<b>📁 ARCHIVE_2012 : CRÉATION DE LA CHAÎNE</b><br><br><span style='color: #00daff; margin-right: 8px;'>·</span> 📺 Programmes d'époque : Le JT & Best-off, L'OverZone 90's.<br><span style='color: #00daff; margin-right: 8px;'>·</span> 🔮 Concepts historiques : Qui veut passer pour un inculte ?, Bureau des Plinthes.",
-        "2016": "<b>📁 ARCHIVE_2016 : L'ALLIANCE ET L'EXPANSION</b><br><br><span style='color: #00daff; margin-right: 8px;'>·</span> Structuration de l'équipe et début des projets multi-gaming réguliers.<br><span style='color: #00daff; margin-right: 8px;'>·</span> Ouverture des premiers serveurs communautaires dédiés.",
-        "2024": "<b>📁 ARCHIVE_2024 : LA NOUVELLE ÈRE</b><br><br><span style='color: #00daff; margin-right: 8px;'>·</span> Transition officielle vers l'identité visuelle et technique Fr33zy Over Studio.<br><span style='color: #00daff; margin-right: 8px;'>·</span> Modernisation globale des outils et refonte complète de l'infrastructure."
+        "2016": "<b>📁 ARCHIVE_2016 : L'ALLIANCE ET L'EXPANSION</b><br><br><span style='color: #00daff; margin-right: 8px;'>·</span> 👥 Arrivée de Xanna. Début du trio emblématique.<br><span style='color: #00daff; margin-right: 8px;'>·</span> 🎮 Expansion des formats et des projets multi-gaming.",
+        "2024": "<b>📁 ARCHIVE_2024 : FR33ZY OVER STUDIO MODERN V1</b><br><br><span style='color: #00daff; margin-right: 8px;'>·</span> 🚀 Refonte graphique intégrale et nouveau logo officiel.<br><span style='color: #00daff; margin-right: 8px;'>·</span> Modernisation globale des outils et de l'infrastructure."
     }
     
     # Le style de base d'origine de la box (Bordure fine cyan, fond transparent)
@@ -323,22 +323,12 @@ if st.session_state.theme == "Subnautica_2":
     """
     st.markdown(box_style_home, unsafe_allow_html=True)
     
-    # CORRECTION : Utilisation de la bonne variable Subnautica_2_story_year partout
-    if st.session_state.Subnautica_2_story_year == "2012":
-        st.markdown(f"""
-        <div class="subnautica-box-base">
-            <b>📁 ARCHIVE_{st.session_state.Subnautica_2_story_year} : CRÉATION DE LA CHAÎNE</b><br><br>
-            <span style="color: #00daff; margin-right: 8px;">·</span> {h_texts[st.session_state.Subnautica_2_story_year]}
-        </div>
-        """, unsafe_allow_html=True)
-    elif st.session_state.Subnautica_2_story_year == "2016":
-        st.markdown(
-            '<div class="subnautica-box-base" style="border-left: 3px solid #00d2ff;"><div class="Subnautica_2-h1">📂 ARCHIVE_2016 : ALLIANCE</div><div class="Subnautica_2-p">• Arrivée de Xanna. Début du trio emblématique <br>• Expansion des formats.</div></div>',
-            unsafe_allow_html=True)
-    elif st.session_state.Subnautica_2_story_year == "2024":
-        st.markdown(
-            '<div class="subnautica-box-base" style="border-left: 3px solid #00d2ff;"><div class="Subnautica_2-h1">📂 ARCHIVE_2024 : FR33ZY OVER STUDIO MODERN V1</div><div class="Subnautica_2-p">• 🚀 Refonte graphique intégrale, nouveau logo officiel.<br></div></div>',
-            unsafe_allow_html=True)
+    # Affichage dynamique et unique de la box selon l'année sélectionnée
+    st.markdown(f"""
+    <div class="subnautica-box-base">
+        {h_texts[st.session_state.Subnautica_2_story_year]}
+    </div>
+    """, unsafe_allow_html=True)
 
 else:
     # Configuration de la couleur orange d'origine pour la frise
@@ -352,7 +342,6 @@ else:
         .timeline-line {{ position: absolute; top: 7px; left: 12%; right: 12%; height: 2px; background: #242c34; z-index: 1; }}
         .timeline-node {{ text-align: center; width: 33%; position: relative; z-index: 2; cursor: pointer; }}
 
-        /* RE-CORRECTION DES POINTS ABSENTS POUR LE SITE ORANGE */
         .timeline-dot {{ 
             display: block !important;
             width: 14px !important; 
