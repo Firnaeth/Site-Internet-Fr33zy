@@ -590,32 +590,82 @@ elif st.session_state.active_tab == "L'ÉQUIPE":
                         st.rerun()
 
 # =========================================================================
-# 📁 ONGLET : PROJETS (ADAPTATION DEMANDÉE)
+# 📁 ONGLET : PROJETS
 # =========================================================================
 elif st.session_state.active_tab == "PROJETS":
     accent_color = "#00d2ff" if st.session_state.theme == "Subnautica_2" else "#d37c2e"
-    st.markdown(f'### 📂 PROJETS & VISION')
 
-    # --- MODE Subnautica_2 : BOUTONS PDA ---
+    st.markdown(
+        f'<h3 style="font-family:\'Orbitron\', sans-serif; font-weight:500; color:white; margin-bottom:20px;">🚀 NOS PROJETS & ACTUALITÉS</h3>',
+        unsafe_allow_html=True
+    )
+
+    # 🌊 STRUCTURE DES BOITES EN MODE SUBNAUTICA (Cyan)
     if st.session_state.theme == "Subnautica_2":
+        # Sécurité initialisation de la variable d'année pour l'onglet Projets
+        if "Subnautica_2_project_year" not in st.session_state:
+            st.session_state.Subnautica_2_project_year = "2024"
+
+        # Boutons HUD pour basculer entre les années de projets
         cols_p = st.columns(3)
-        proj_milestones = [("2026", "🌐 SITE V1"), ("2024", "🎬 TRANSITION"), ("2025", "🛒 SHOP")]
-        for idx, (yr, label) in enumerate(proj_milestones):
+        project_milestones = [("2012", "📁 LOGS ANCIENS (2012)"), ("2016", "🗃️ ARCHIVES SÉRIES (2016)"), ("2024", "🛰️ INFRASTRUCTURE (2024)")]
+        
+        for idx, (yr, label) in enumerate(project_milestones):
             with cols_p[idx]:
                 if st.button(label, key=f"proj_btn_{yr}", use_container_width=True):
                     st.session_state.Subnautica_2_project_year = yr
-
+                    st.rerun()
+        
         st.write("")
-        p_texts = {
-            "2026": "Lancement du Hub communautaire, du shop et de l'expérience membre. C'est l'objectif actuel !",
-            "2024": "Transition vers Fr33zy Over Studio pour une identité plus forte.",
-            "2025": "Ouverture de la boutique officielle Fr33zy Over Studio."
-        }
-        st.markdown(
-            f'<div class="Subnautica_2-box"><b>OBJECTIF_{st.session_state.Subnautica_2_project_year} :</b><br>{p_texts[st.session_state.Subnautica_2_project_year]}</div>',
-            unsafe_allow_html=True)
+        
+        # Style identique à l'onglet Qui Sommes-Nous
+        box_style_proj = """
+        <style>
+            .subnautica-box-base {
+                border: 1px solid #00daff;
+                border-radius: 4px;
+                padding: 15px 20px;
+                background-color: transparent;
+                box-shadow: inset 0 0 10px rgba(0, 218, 255, 0.05), 0 0 8px rgba(0, 218, 255, 0.1);
+                color: #ffffff;
+                font-family: 'Orbitron', sans-serif;
+                margin-top: 15px;
+                line-height: 1.6;
+            }
+            .subnautica-box-base b {
+                color: #00daff;
+            }
+        </style>
+        """
+        st.markdown(box_style_proj, unsafe_allow_html=True)
+        
+        # Affichage conditionnel selon la base demandée
+        if st.session_state.Subnautica_2_project_year == "2012":
+            st.markdown(
+                '<div class="subnautica-box-base"><b>📁 LOGS_2012 : LES PREMIERS PROJETS VLOGS</b><br><br><span style="color: #00daff; margin-right: 8px;">·</span> 🎬 Lancement des premiers concepts originaux sur la plateforme.<br><span style="color: #00daff; margin-right: 8px;">·</span> 🕹️ balbutiements techniques et captures d\'époque rétros.</div>',
+                unsafe_allow_html=True)
+                
+        elif st.session_state.Subnautica_2_project_year == "2016":
+            st.markdown(
+                '<div class="subnautica-box-base"><b>🗃️ LOGS_2016 : DIVERSIFICATION DES FORMATS</b><br><br><span style="color: #00daff; margin-right: 8px;">·</span> ⚔️ Multi-gaming intensif et création des premières séries coopératives.<br><span style="color: #00daff; margin-right: 8px;">·</span> 📈 Structuration des playlists et montages dynamiques.</div>',
+                unsafe_allow_html=True)
+                
+        elif st.session_state.Subnautica_2_project_year == "2024":
+            st.markdown(
+                '<div class="subnautica-box-base"><b>🛰️ LOGS_2024 : DÉPLOIEMENT FR33ZY OVER STUDIO</b><br><br><span style="color: #00daff; margin-right: 8px;">·</span> 🌌 Intégration de la charte Subnautica 2 et refonte des serveurs communautaires.<br><span style="color: #00daff; margin-right: 8px;">·</span> 🛠️ Alignement des configurations OBS Studio, DaVinci Resolve et Streamlit HUD.</div>',
+                unsafe_allow_html=True)
 
-    # --- MODE ORANGE : FRISE VERTICALE ---
+    # 🍊 MODE CLASSIC (Orange)
+    else:
+        # Tu pourras placer ici ta structure ou frise classique pour les projets si besoin
+        st.markdown(f"""
+        <div class="orange-card-classic">
+            <div class="orange-title-classic">PROJETS DU STUDIO (MODE CLASSIC)</div>
+            <div class="orange-text-classic">Retrouvez l'ensemble de nos archives de productions, séries de Let's Play et événements communautaires classés par année.</div>
+        </div>
+        """, unsafe_allow_html=True)
+
+# 🍊 MODE CLASSIC (Orange)
     else:
         dot_color = "#d37c2e"
         html_v_timeline = f"""
@@ -650,6 +700,15 @@ elif st.session_state.active_tab == "PROJETS":
         </div>
         """
         components.html(html_v_timeline, height=350)
+
+        st.markdown(f"""
+        <div class="orange-card-classic">
+            <div class="orange-title-classic">PROJETS DU STUDIO (MODE CLASSIC)</div>
+            <div class="orange-text-classic">Retrouvez l'ensemble de nos archives de productions, séries de Let's Play et événements communautaires classés par année.</div>
+        </div>
+        """, unsafe_allow_html=True)
+
+
 # --- 👥 ONGLET L'ÉQUIPE ---
 elif st.session_state.active_tab == "L'ÉQUIPE":
     if st.session_state.current_profile:
