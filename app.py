@@ -279,137 +279,136 @@ if st.session_state.active_tab == "QUI SOMMES-NOUS":
         unsafe_allow_html=True)
 
 # 🌊 MODE SUBNAUTICA (Cyan)
-    if st.session_state.theme == "Subnautica_2":
-        # 🎯 SÉCURITÉ INITIALISATION : Crée la variable si elle n'existe pas
-        if "Subnautica_2_story_year" not in st.session_state:
-            st.session_state.Subnautica_2_story_year = "2012"
+if st.session_state.theme == "Subnautica_2":
+    # 🎯 SÉCURITÉ INITIALISATION : Crée la variable si elle n'existe pas
+    if "Subnautica_2_story_year" not in st.session_state:
+        st.session_state.Subnautica_2_story_year = "2012"
 
-        cols_h = st.columns(3)
-        home_milestones = [("2012", "🚀 ORIGINES (2012)"), ("2016", "👥 L'ALLIANCE (2016)"), ("2024", "⚓ NOUVELLE ÈRE (2024)")]
-        
-        for idx, (yr, label) in enumerate(home_milestones):
-            with cols_h[idx]:
-                if st.button(label, key=f"home_btn_{yr}", use_container_width=True):
-                    st.session_state.Subnautica_2_story_year = yr
-                    st.rerun()
-        
-        st.write("")
-        
-        # 🎯 Dictionnaire contenant tes textes d'origine pour l'accueil
-        h_texts = {
-            "2012": "<b>📁 ARCHIVE_2012 : CRÉATION DE LA CHAÎNE</b><br><br><span style='color: #00daff; margin-right: 8px;'>·</span> 📺 Programmes d'époque : Le JT & Best-off, L'OverZone 90's.<br><span style='color: #00daff; margin-right: 8px;'>·</span> 🔮 Concepts historiques : Qui veut passer pour un inculte ?, Bureau des Plinthes.",
-            "2016": "<b>📁 ARCHIVE_2016 : L'ALLIANCE ET L'EXPANSION</b><br><br><span style='color: #00daff; margin-right: 8px;'>·</span> Structuration de l'équipe et début des projets multi-gaming réguliers.<br><span style='color: #00daff; margin-right: 8px;'>·</span> Ouverture des premiers serveurs communautaires dédiés.",
-            "2024": "<b>📁 ARCHIVE_2024 : LA NOUVELLE ÈRE</b><br><br><span style='color: #00daff; margin-right: 8px;'>·</span> Transition officielle vers l'identité visuelle et technique Fr33zy Over Studio.<br><span style='color: #00daff; margin-right: 8px;'>·</span> Modernisation globale des outils et refonte complète de l'infrastructure."
+    cols_h = st.columns(3)
+    home_milestones = [("2012", "🚀 ORIGINES (2012)"), ("2016", "👥 L'ALLIANCE (2016)"), ("2024", "⚓ NOUVELLE ÈRE (2024)")]
+    
+    for idx, (yr, label) in enumerate(home_milestones):
+        with cols_h[idx]:
+            if st.button(label, key=f"home_btn_{yr}", use_container_width=True):
+                st.session_state.Subnautica_2_story_year = yr
+                st.rerun()
+    
+    st.write("")
+    
+    # 🎯 Dictionnaire contenant tes textes d'origine pour l'accueil
+    h_texts = {
+        "2012": "<b>📁 ARCHIVE_2012 : CRÉATION DE LA CHAÎNE</b><br><br><span style='color: #00daff; margin-right: 8px;'>·</span> 📺 Programmes d'époque : Le JT & Best-off, L'OverZone 90's.<br><span style='color: #00daff; margin-right: 8px;'>·</span> 🔮 Concepts historiques : Qui veut passer pour un inculte ?, Bureau des Plinthes.",
+        "2016": "<b>📁 ARCHIVE_2016 : L'ALLIANCE ET L'EXPANSION</b><br><br><span style='color: #00daff; margin-right: 8px;'>·</span> Structuration de l'équipe et début des projets multi-gaming réguliers.<br><span style='color: #00daff; margin-right: 8px;'>·</span> Ouverture des premiers serveurs communautaires dédiés.",
+        "2024": "<b>📁 ARCHIVE_2024 : LA NOUVELLE ÈRE</b><br><br><span style='color: #00daff; margin-right: 8px;'>·</span> Transition officielle vers l'identité visuelle et technique Fr33zy Over Studio.<br><span style='color: #00daff; margin-right: 8px;'>·</span> Modernisation globale des outils et refonte complète de l'infrastructure."
+    }
+    
+    # Le style de base d'origine de la box (Bordure fine cyan, fond transparent)
+    box_style_home = """
+    <style>
+        .subnautica-box-base {
+            border: 1px solid #00daff;
+            border-radius: 4px;
+            padding: 15px 20px;
+            background-color: transparent;
+            box-shadow: inset 0 0 10px rgba(0, 218, 255, 0.05), 0 0 8px rgba(0, 218, 255, 0.1);
+            color: #ffffff;
+            font-family: 'Orbitron', sans-serif;
+            margin-top: 15px;
+            line-height: 1.6;
         }
-        
-        # Le style de base d'origine de la box (Bordure fine cyan, fond transparent)
-        box_style_home = """
-        <style>
-            .subnautica-box-base {
-                border: 1px solid #00daff;
-                border-radius: 4px;
-                padding: 15px 20px;
-                background-color: transparent;
-                box-shadow: inset 0 0 10px rgba(0, 218, 255, 0.05), 0 0 8px rgba(0, 218, 255, 0.1);
-                color: #ffffff;
-                font-family: 'Orbitron', sans-serif;
-                margin-top: 15px;
-                line-height: 1.6;
-            }
-            .subnautica-box-base b {
-                color: #00daff;
-            }
-        </style>
-        """
-        st.markdown(box_style_home, unsafe_allow_html=True)
-        
-        # Affichage propre basé sur la variable d'année de ton parcours
-        st.markdown(f'<div class="subnautica-box-base">{h_texts[st.session_state.Subnautica_2_story_year]}</div>', unsafe_allow_html=True)
-        
-        # Affichage sans bug avec le bon dictionnaire p_texts ou h_texts
+        .subnautica-box-base b {
+            color: #00daff;
+        }
+    </style>
+    """
+    st.markdown(box_style_home, unsafe_allow_html=True)
+    
+    # CORRECTION : Utilisation de la bonne variable Subnautica_2_story_year partout
+    if st.session_state.Subnautica_2_story_year == "2012":
         st.markdown(f"""
         <div class="subnautica-box-base">
-            <b>📁 ARCHIVE_{st.session_state.subnautica_home_year} : CRÉATION DE LA CHAÎNE</b><br><br>
-            <span style="color: #00daff; margin-right: 8px;">·</span> {h_texts[st.session_state.subnautica_home_year]}
+            <b>📁 ARCHIVE_{st.session_state.Subnautica_2_story_year} : CRÉATION DE LA CHAÎNE</b><br><br>
+            <span style="color: #00daff; margin-right: 8px;">·</span> {h_texts[st.session_state.Subnautica_2_story_year]}
         </div>
         """, unsafe_allow_html=True)
-        elif st.session_state.Subnautica_2_story_year == "2016":
-            st.markdown(
-                '<div class="Subnautica_2-box" style="border-left: 3px solid #00d2ff;"><div class="Subnautica_2-h1">📂 ARCHIVE_2016 : ALLIANCE</div><div class="Subnautica_2-p">• Arrivée de Xanna. Début du trio emblématique <br>• Expansion des formats.</div></div>',
-                unsafe_allow_html=True)
-        elif st.session_state.Subnautica_2_story_year == "2024":
-            st.markdown(
-                '<div class="Subnautica_2-box" style="border-left: 3px solid #00d2ff;"><div class="Subnautica_2-h1">📂 ARCHIVE_2024 : FR33ZY OVER STUDIO MODERN V1</div><div class="Subnautica_2-p">• 🚀 Refonte graphique intégrale, nouveau logo officiel.<br></div></div>',
-                unsafe_allow_html=True)
-    else:
-        # Configuration de la couleur orange d'origine pour la frise
-        dot_color = "#d37c2e"
-        dot_hover_color = "#ff8c2e"
+    elif st.session_state.Subnautica_2_story_year == "2016":
+        st.markdown(
+            '<div class="subnautica-box-base" style="border-left: 3px solid #00d2ff;"><div class="Subnautica_2-h1">📂 ARCHIVE_2016 : ALLIANCE</div><div class="Subnautica_2-p">• Arrivée de Xanna. Début du trio emblématique <br>• Expansion des formats.</div></div>',
+            unsafe_allow_html=True)
+    elif st.session_state.Subnautica_2_story_year == "2024":
+        st.markdown(
+            '<div class="subnautica-box-base" style="border-left: 3px solid #00d2ff;"><div class="Subnautica_2-h1">📂 ARCHIVE_2024 : FR33ZY OVER STUDIO MODERN V1</div><div class="Subnautica_2-p">• 🚀 Refonte graphique intégrale, nouveau logo officiel.<br></div></div>',
+            unsafe_allow_html=True)
 
-        html_timeline_fixed_popups = f"""
-        <style>
-            .timeline-container {{ font-family: 'Orbitron', sans-serif; color: white; background: #0b0f14; padding: 20px 15px; border-radius: 6px; }}
-            .timeline-wrapper {{ display: flex; justify-content: space-between; align-items: flex-start; position: relative; min-width: 600px; }}
-            .timeline-line {{ position: absolute; top: 7px; left: 12%; right: 12%; height: 2px; background: #242c34; z-index: 1; }}
-            .timeline-node {{ text-align: center; width: 33%; position: relative; z-index: 2; cursor: pointer; }}
+else:
+    # Configuration de la couleur orange d'origine pour la frise
+    dot_color = "#d37c2e"
+    dot_hover_color = "#ff8c2e"
 
-            /* RE-CORRECTION DES POINTS ABSENTS POUR LE SITE ORANGE */
-            .timeline-dot {{ 
-                display: block !important;
-                width: 14px !important; 
-                height: 14px !important; 
-                background-color: {dot_color} !important; 
-                border-radius: 50% !important; 
-                margin: 0 auto 10px auto !important; 
-                position: relative !important;
-                z-index: 5 !important;
-                box-shadow: 0 0 10px {dot_color}; 
-                transition: transform 0.2s ease, background-color 0.2s; 
-            }}
+    html_timeline_fixed_popups = f"""
+    <style>
+        .timeline-container {{ font-family: 'Orbitron', sans-serif; color: white; background: #0b0f14; padding: 20px 15px; border-radius: 6px; }}
+        .timeline-wrapper {{ display: flex; justify-content: space-between; align-items: flex-start; position: relative; min-width: 600px; }}
+        .timeline-line {{ position: absolute; top: 7px; left: 12%; right: 12%; height: 2px; background: #242c34; z-index: 1; }}
+        .timeline-node {{ text-align: center; width: 33%; position: relative; z-index: 2; cursor: pointer; }}
 
-            .timeline-node:hover .timeline-dot {{ transform: scale(1.3); background-color: {dot_hover_color} !important; box-shadow: 0 0 15px {dot_hover_color}; }}
-            .timeline-year {{ font-weight: bold; color: {dot_color}; font-size: 0.95rem; letter-spacing: 1px; }}
-            .timeline-node .popup-box {{ visibility: hidden; width: 260px; background-color: #121820; color: #cbd5e1; text-align: left; border: 1px solid {dot_color}; border-radius: 6px; padding: 12px; position: absolute; z-index: 10; top: 110%; left: 50%; transform: translateX(-50%); opacity: 0; transition: opacity 0.2s ease, transform 0.2s ease; font-family: sans-serif; font-size: 0.8rem; line-height: 1.4; box-shadow: 0 4px 15px rgba(0,0,0,0.6); }}
-            .timeline-node .popup-box::after {{ content: ""; position: absolute; bottom: 100%; left: 50%; margin-left: -6px; border-width: 6px; border-style: solid; border-color: transparent transparent {dot_color} transparent; }}
-            .popup-title {{ font-family: 'Orbitron', sans-serif; color: {dot_color}; font-weight: bold; margin-bottom: 6px; font-size: 0.85rem; }}
-            .timeline-node:hover .popup-box {{ visibility: visible; opacity: 1; transform: translateX(-50%) translateY(5px); }}
-        </style>
-        <div class="timeline-container">
-            <div class="timeline-wrapper">
-                <div class="timeline-line"></div>
-                <div class="timeline-node">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-year">2012</div>
-                    <div class="popup-box">
-                        <div class="popup-title">🚀 ORIGINES (2012)</div>
-                            • 📺 Le JT & Best-off<br>
-                            • 📺 L'OverZone 90's<br>
-                            • 👍 J'aime / J'aime pas<br>
-                            • 🧠 Qui veut passer pour un inculte ?<br>
-                            • 🛡️ Bureau des Plinthes
-                        </div>
-                </div>
-                <div class="timeline-node">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-year">2016</div>
-                    <div class="popup-box">
-                        <div class="popup-title">👥 L'ALLIANCE (2016)</div>
-                        • Arrivée de Xanna. Début du trio emblématique. <br>
-                        • 🎮 Expansion des formats.
+        /* RE-CORRECTION DES POINTS ABSENTS POUR LE SITE ORANGE */
+        .timeline-dot {{ 
+            display: block !important;
+            width: 14px !important; 
+            height: 14px !important; 
+            background-color: {dot_color} !important; 
+            border-radius: 50% !important; 
+            margin: 0 auto 10px auto !important; 
+            position: relative !important;
+            z-index: 5 !important;
+            box-shadow: 0 0 10px {dot_color}; 
+            transition: transform 0.2s ease, background-color 0.2s; 
+        }}
+
+        .timeline-node:hover .timeline-dot {{ transform: scale(1.3); background-color: {dot_hover_color} !important; box-shadow: 0 0 15px {dot_hover_color}; }}
+        .timeline-year {{ font-weight: bold; color: {dot_color}; font-size: 0.95rem; letter-spacing: 1px; }}
+        .timeline-node .popup-box {{ visibility: hidden; width: 260px; background-color: #121820; color: #cbd5e1; text-align: left; border: 1px solid {dot_color}; border-radius: 6px; padding: 12px; position: absolute; z-index: 10; top: 110%; left: 50%; transform: translateX(-50%); opacity: 0; transition: opacity 0.2s ease, transform 0.2s ease; font-family: sans-serif; font-size: 0.8rem; line-height: 1.4; box-shadow: 0 4px 15px rgba(0,0,0,0.6); }}
+        .timeline-node .popup-box::after {{ content: ""; position: absolute; bottom: 100%; left: 50%; margin-left: -6px; border-width: 6px; border-style: solid; border-color: transparent transparent {dot_color} transparent; }}
+        .popup-title {{ font-family: 'Orbitron', sans-serif; color: {dot_color}; font-weight: bold; margin-bottom: 6px; font-size: 0.85rem; }}
+        .timeline-node:hover .popup-box {{ visibility: visible; opacity: 1; transform: translateX(-50%) translateY(5px); }}
+    </style>
+    <div class="timeline-container">
+        <div class="timeline-wrapper">
+            <div class="timeline-line"></div>
+            <div class="timeline-node">
+                <div class="timeline-dot"></div>
+                <div class="timeline-year">2012</div>
+                <div class="popup-box">
+                    <div class="popup-title">🚀 ORIGINES (2012)</div>
+                        • 📺 Le JT & Best-off<br>
+                        • 📺 L'OverZone 90's<br>
+                        • 👍 J'aime / J'aime pas<br>
+                        • 🧠 Qui veut passer pour un inculte ?<br>
+                        • 🛡️ Bureau des Plinthes
                     </div>
+            </div>
+            <div class="timeline-node">
+                <div class="timeline-dot"></div>
+                <div class="timeline-year">2016</div>
+                <div class="popup-box">
+                    <div class="popup-title">👥 L'ALLIANCE (2016)</div>
+                    • Arrivée de Xanna. Début du trio emblématique. <br>
+                    • 🎮 Expansion des formats.
                 </div>
-                <div class="timeline-node">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-year">2024</div>
-                    <div class="popup-box">
-                        <div class="popup-title">⚓ NOUVELLE ÈRE (2024)</div>
-                        Transition vers Fr33zy Over Studio (F.O.S).
-                    </div>
+            </div>
+            <div class="timeline-node">
+                <div class="timeline-dot"></div>
+                <div class="timeline-year">2024</div>
+                <div class="popup-box">
+                    <div class="popup-title">⚓ NOUVELLE ÈRE (2024)</div>
+                    Transition vers Fr33zy Over Studio (F.O.S).
                 </div>
             </div>
         </div>
-        """
-        st.components.v1.html(html_timeline_fixed_popups, height=220)
+    </div>
+    """
+    st.components.v1.html(html_timeline_fixed_popups, height=220)
 
     # --- RÉINTÉGRATION DES BLOCS INFERIEURS : AU PROGRAMME & NOTRE VISION ---
     st.markdown('<hr style="border-color: #242c34; margin-top: 30px; margin-bottom: 30px;">', unsafe_allow_html=True)
