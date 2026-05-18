@@ -577,7 +577,7 @@ elif st.session_state.active_tab == "L'ÉQUIPE":
 elif st.session_state.active_tab == "PROJETS":
     st.markdown(f'### 📂 NOS PROJETS & VISION')
 
-    if st.session_state.theme == NOM_THEME_CYAN:
+    if st.session_state.theme == Subnautica_2
         cols_p = st.columns(3)
         proj_milestones = [("2024", "🌐 SITE V1"), ("2025", "🎬 CROSSOVER"), ("2026", "🛒 SHOP")]
         for idx, (yr, label) in enumerate(proj_milestones):
