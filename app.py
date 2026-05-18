@@ -597,11 +597,16 @@ elif st.session_state.active_tab == "PROJETS":
             unsafe_allow_html=True)
 
     # --- MODE ORANGE : FRISE VERTICALE ---
-    else:
+else:
         dot_color = "#d37c2e"
         html_v_timeline = f"""
         <style>
-            .tl-v-cont {{ position: relative; padding: 20px 40px; background: #0b0f14; border-radius: 6px; font-family: 'Orbitron'; }}
+            .tl-v-cont {{ 
+                position: relative; 
+                padding: 20px 40px; 
+                background: transparent; /* 🎯 REND LE FOND COMPLÈTEMENT INVISIBLE */
+                font-family: sans-serif; 
+            }}
             .tl-v-line {{ position: absolute; top: 10px; bottom: 10px; left: 46px; width: 2px; background: #242c34; }}
             .tl-v-node {{ position: relative; padding-left: 40px; margin-bottom: 40px; }}
             .tl-v-dot {{ position: absolute; left: 0; top: 4px; width: 14px; height: 14px; background: {dot_color}; border-radius: 50%; box-shadow: 0 0 10px {dot_color}; z-index: 2; }}
@@ -609,11 +614,12 @@ elif st.session_state.active_tab == "PROJETS":
             .tl-v-desc {{ color: #cbd5e1; font-family: sans-serif; font-size: 0.9rem; line-height: 1.4; max-width: 500px; }}
         </style>
         <div class="tl-v-cont"><div class="tl-v-line"></div>
-            <div class="tl-v-node"><div class="tl-v-dot"></div><div class="tl-v-year">2026</div><div class="tl-v-desc"><b>SITE WEB V1 :</b>Lancement du Hub communautaire, du shop et de l'expérience membre. C'est l'objectif actuel !</div></div>
-            <div class="tl-v-node"><div class="tl-v-dot"></div><div class="tl-v-year">2024</div><div class="tl-v-desc"><b>TRANSITION :</b>Over_1 vers Fr33zy Over Studio pour une identité plus forte.</div></div>
+            <div class="tl-v-node"><div class="tl-v-dot"></div><div class="tl-v-year">2026</div><div class="tl-v-desc"><b>SITE WEB V1 :</b> Lancement du Hub communautaire, du shop et de l'expérience membre. C'est l'objectif actuel !</div></div>
+            <div class="tl-v-node"><div class="tl-v-dot"></div><div class="tl-v-year">2024</div><div class="tl-v-desc"><b>TRANSITION :</b> Over_1 vers Fr33zy Over Studio pour une identité plus forte.</div></div>
         </div>
         """
-        components.html(html_v_timeline, height=350)
+        # On ajoute scrupuleusement les textes de ton visuel et on affiche sans fond opaque
+        components.html(html_v_timeline, height=250)
 
 # --- 👥 ONGLET L'ÉQUIPE ---
 elif st.session_state.active_tab == "L'ÉQUIPE":
