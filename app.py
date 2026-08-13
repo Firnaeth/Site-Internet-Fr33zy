@@ -813,10 +813,8 @@ elif st.session_state.active_tab == "CONTACT":
                 unsafe_allow_html=True)
     st.write("")
     
-    # URL de ton forum
     forum_url = "https://firnaeth.github.io/actu-manga-forum/index.html"
 
-    # Affichage sur 3 colonnes : Email, Discord, Forum
     c1, c2, c3 = st.columns(3)
     with c1:
         st.markdown('<h4 style="font-family:\'Orbitron\', sans-serif; font-weight:500;">📧 EMAIL</h4>',
