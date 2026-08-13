@@ -767,7 +767,7 @@ elif st.session_state.active_tab == "PHOTOS":
 elif st.session_state.active_tab == "CONTACT":
     st.markdown('### 📥 NOUS CONTACTER')
 
-    col_mail, col_discord = st.columns(2)
+    col_mail, col_discord = st.columns(3)
 
     with col_mail:
         st.markdown('### 📧 EMAIL')
