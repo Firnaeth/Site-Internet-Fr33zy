@@ -762,52 +762,8 @@ elif st.session_state.active_tab == "PHOTOS":
     st.link_button("Voir plus de photos sur Instagram", "https://instagram.com/ton_compte")
 
 # =========================================================================
-# 📩 ONGLET : CONTACT (REMIS EN PLACE ET CORRIGÉ)
+# 📩 ONGLET : CONTACT
 # =========================================================================
-elif st.session_state.active_tab == "CONTACT":
-    st.markdown('### 📥 NOUS CONTACTER')
-
-    col_mail, col_discord = st.columns(3)
-
-    with col_mail:
-        st.markdown('### 📧 EMAIL')
-        st.link_button("CONTACTER PAR EMAIL", "mailto:contact.fr33zy0verstudio@gmail.com", use_container_width=True)
-
-    with col_discord:
-        st.markdown('### 💬 COMMUNAUTÉ')
-        st.link_button("REJOINDRE LE DISCORD", "https://discord.gg/h4r2MSgJSk", use_container_width=True)
-
-# --- 🛒 LES AUTRES ONGLETS ---
-elif st.session_state.active_tab == "SHOP" or st.session_state.active_tab == "DON":
-    st.subheader(f"💎 {st.session_state.active_tab}")
-    st.info("🚀 Ce module est en cours de construction. Revenez très bientôt !")
-
-    # Bloc de maintenance visuel (comme DON)
-    st.markdown("""
-            <div style="text-align: center; padding: 40px; border: 1px dashed #30363d; border-radius: 10px; opacity: 0.6; margin-top:20px;">
-                <p style="font-size: 1.2rem; color: #e67e22;">🚧 MODULE EN CONSTRUCTION 🚧</p>
-                <p style="font-size: 0.9rem;">Nous sélectionnons les meilleurs produits pour vous garantir une qualité premium.</p>
-            </div>
-        """, unsafe_allow_html=True)
-
-    # Injection CSS pour forcer l'alignement des gros boutons d'action du bas en Cyan permanent
-    st.markdown("""
-        <style>
-        /* On isole l'ID de la zone basse pour appliquer le cyan aux boutons d'action */
-        .cyan-action-box button, .cyan-action-box a {
-            border: 1px solid rgba(0, 210, 255, 0.4) !important;
-            color: #00d2ff !important;
-        }
-        .cyan-action-box button:hover, .cyan-action-box a:hover {
-            border-color: #00d2ff !important;
-            box-shadow: 0 0 12px rgba(0, 210, 255, 0.4) !important;
-            color: white !important;
-        }
-        </style>
-    """, unsafe_allow_html=True)
-
-
-# --- ✉️ ONGLET CONTACT ---
 elif st.session_state.active_tab == "CONTACT":
     st.markdown('<h3 style="font-family:\'Orbitron\', sans-serif; font-weight:500;">📩 NOUS CONTACTER & COMMUNAUTÉ</h3>',
                 unsafe_allow_html=True)
