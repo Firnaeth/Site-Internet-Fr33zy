@@ -384,6 +384,15 @@ if st.session_state.active_tab == "QUI SOMMES-NOUS":
                 <div class="timeline-line"></div>
                 <div class="timeline-node">
                     <div class="timeline-dot"></div>
+                    <div class="timeline-year">2011</div>
+                    <div class="popup-box">
+                        <div class="popup-title">📜 PRÉMICES (2011)</div>
+                        • 📋 Blog consacré à l'actualité de la Japan Expo, du TGS, d'Epitanime et d'Animasia<br>
+                        • 📋 Transition du blog vers les réseaux sociaux
+                    </div>
+                </div>
+                 <div class="timeline-node">
+                    <div class="timeline-dot"></div>
                     <div class="timeline-year">2012</div>
                     <div class="popup-box">
                         <div class="popup-title">🚀 ORIGINES (2012)</div>
