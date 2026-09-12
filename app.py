@@ -284,8 +284,8 @@ if st.session_state.active_tab == "QUI SOMMES-NOUS":
         if "Subnautica_2_story_year" not in st.session_state:
             st.session_state.Subnautica_2_story_year = "2012"
 
-        cols_h = st.columns(3)
-        home_milestones = [("2012", "🚀 ORIGINES (2012)"), ("2016", "👥 L'ALLIANCE (2016)"), ("2024", "⚓ NOUVELLE ÈRE (2024)")]
+        cols_h = st.columns(4)
+        home_milestones = [("2011", "📜 PRÉMICES (2011)"), ("2012", "🚀 ORIGINES (2012)"), ("2016", "👥 L'ALLIANCE (2016)"), ("2024", "⚓ NOUVELLE ÈRE (2024)")]
         
         for idx, (yr, label) in enumerate(home_milestones):
             with cols_h[idx]:
