@@ -320,6 +320,7 @@ if st.session_state.active_tab == "QUI SOMMES-NOUS":
         if st.session_state.Subnautica_2_story_year == "2011":
             st.markdown(
                 '<div class="subnautica-box-base"><b>📁 ARCHIVE_2011 : CRÉATION DU Blog d'Over_1 </b><br><br><span style="color: #00daff; margin-right: 8px;">·</span> 📋 Blog consacré à l'actualité de la Japan Expo, du TGS, d'Epitanime et d'Animasia<br><span style="color: #00daff; margin-right: 8px;">·</span> 📋 Transition du blogs vers les réseaux sociaux</div>',
+                unsafe_allow_html=True)
         
         if st.session_state.Subnautica_2_story_year == "2012":
             st.markdown(
