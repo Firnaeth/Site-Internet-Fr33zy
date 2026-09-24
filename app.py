@@ -213,9 +213,9 @@ CREATEURS = {
         "threads": "https://www.threads.com/@firnaeth_yt",
         "discord": "https://discord.gg/h4r2MSgJSk",
         "series": [
-            ("📜 Journal d’un forge-lol 🔨", "https://youtube.com/playlist?list=PLgX-3H3ACJk5Rb3whj-89ANDgMXN-iaBf"),
+            ("🤿 Coop en amoureux", "https://youtube.com/playlist?list=PLd_9GQ9aXIeo&si=IJoF1zPk1HqUBGco"),
             ("⚔️ Lura : L’Héritière des Forges", "https://youtube.com/playlist?list=PLKphWqpSVhIQ&si=lNYpGwPcgq9qICG-"),
-            ("Coop en amoureux", "https://youtube.com/playlist?list=PLd_9GQ9aXIeo&si=IJoF1zPk1HqUBGco"),
+            ("📜 Journal d’un forge-lol 🔨", "https://youtube.com/playlist?list=PLgX-3H3ACJk5Rb3whj-89ANDgMXN-iaBf"),
             ("Chroniques De Silent Hill 2", "https://www.youtube.com/playlist?list=PLgX-3H3ACJk7l33I2euw_yEPJ7a4JEVx9")
         ],
         "jeux": "Silent Hill 2, The Elder Scrolls V: Skyrim, Medieval Crafter: Blacksmith",
